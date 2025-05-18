@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Accessibility, Mail, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 
 const AccessibilityPage = () => {
   return (
@@ -28,6 +28,12 @@ const AccessibilityPage = () => {
                 The Municipality of Bar Elias is committed to ensuring that our website is accessible to everyone, including people with disabilities. 
                 We strive to adhere to international best practices and Lebanese accessibility laws to provide an inclusive online experience.
               </p>
+              
+              <div className="bg-primary/10 rounded-lg p-4 mb-8">
+                <h2 className="text-xl font-semibold mb-2 text-primary">Try Our Accessibility Tool</h2>
+                <p>Click the "A" button in the bottom right corner of your screen to access our accessibility tool. 
+                You can adjust text size, contrast, and other settings to make this website more accessible to your needs.</p>
+              </div>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
@@ -154,6 +160,9 @@ const AccessibilityPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Accessibility Widget */}
+      <AccessibilityWidget />
     </div>
   );
 };

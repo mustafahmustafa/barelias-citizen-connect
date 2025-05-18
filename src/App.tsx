@@ -20,6 +20,7 @@ import Volunteer from "./pages/Volunteer";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
+import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          <AccessibilityWidget />
         </div>
       </BrowserRouter>
     </TooltipProvider>
