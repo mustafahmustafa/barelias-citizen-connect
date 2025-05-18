@@ -17,6 +17,9 @@ import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
 import GalleryItem from "./pages/GalleryItem";
 import Volunteer from "./pages/Volunteer";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Accessibility from "./pages/Accessibility";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +43,9 @@ const App = () => (
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/gallery/:id" element={<GalleryItem />} />
               <Route path="/volunteer" element={<Volunteer />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/accessibility" element={<Accessibility />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
