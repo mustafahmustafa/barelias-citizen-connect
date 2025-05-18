@@ -107,36 +107,42 @@ const quickLinks = [
   }
 ];
 
-// Media gallery data - Keep IDs the same for routing purposes
+// Media gallery data with locations
 const mediaGallery = [
   {
     id: 1,
     type: "image",
+    location: "Madinah",
     thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 2,
     type: "image",
+    location: "Riyadh",
     thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 3,
     type: "image",
+    location: "Jeddah",
     thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 4,
     type: "image",
+    location: "Abha",
     thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 5,
     type: "video",
+    location: "Riyadh",
     thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 6,
     type: "image",
+    location: "Aseer",
     thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   }
 ];
@@ -266,30 +272,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Media Gallery Section - Simplified with only images/videos */}
+      {/* Media Gallery Section - With location badges */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-semibold">Media Gallery</h2>
+            <div>
+              <h2 className="text-3xl font-semibold">Visual Assets</h2>
+              <p className="text-muted-foreground mt-2">
+                Explore our media library and discover 2000+ visuals for your marketing and promotions
+              </p>
+            </div>
             <Button variant="outline" asChild>
               <Link to="/gallery">
-                View All Media
+                View All
                 <ArrowRight size={16} className="ml-2" />
               </Link>
             </Button>
           </div>
           
           {/* Desktop Gallery (Grid Layout) */}
-          <div className="hidden md:grid grid-cols-3 gap-6">
+          <div className="hidden md:grid grid-cols-3 gap-4">
             {mediaGallery.map((item) => (
               <Link to={`/gallery/${item.id}`} key={item.id}>
-                <Card className="overflow-hidden card-hover">
+                <Card className="overflow-hidden card-hover group">
                   <div className="relative h-60">
                     <img 
                       src={item.thumbnail} 
-                      alt="Gallery media" 
-                      className="w-full h-full object-cover"
+                      alt={`Gallery media from ${item.location}`} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    
+                    {/* Location Badge */}
+                    <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs rounded-full px-3 py-1.5 flex items-center">
+                      <MapPin className="w-3 h-3 mr-1" />
+                      {item.location}
+                    </div>
+                    
                     {item.type === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
@@ -297,17 +315,6 @@ const Index = () => {
                         </div>
                       </div>
                     )}
-                    <div className="absolute top-3 right-3">
-                      {item.type === "image" ? (
-                        <div className="bg-black/70 text-white rounded-full p-2">
-                          <Image size={16} />
-                        </div>
-                      ) : (
-                        <div className="bg-black/70 text-white rounded-full p-2">
-                          <Film size={16} />
-                        </div>
-                      )}
-                    </div>
                   </div>
                 </Card>
               </Link>
@@ -321,13 +328,20 @@ const Index = () => {
                 {mediaGallery.map((item) => (
                   <CarouselItem key={item.id}>
                     <Link to={`/gallery/${item.id}`}>
-                      <Card className="overflow-hidden card-hover">
+                      <Card className="overflow-hidden card-hover group">
                         <div className="relative h-60">
                           <img 
                             src={item.thumbnail} 
-                            alt="Gallery media" 
-                            className="w-full h-full object-cover"
+                            alt={`Gallery media from ${item.location}`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
+                          
+                          {/* Location Badge */}
+                          <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs rounded-full px-3 py-1.5 flex items-center">
+                            <MapPin className="w-3 h-3 mr-1" />
+                            {item.location}
+                          </div>
+                          
                           {item.type === "video" && (
                             <div className="absolute inset-0 flex items-center justify-center">
                               <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
@@ -335,17 +349,6 @@ const Index = () => {
                               </div>
                             </div>
                           )}
-                          <div className="absolute top-3 right-3">
-                            {item.type === "image" ? (
-                              <div className="bg-black/70 text-white rounded-full p-2">
-                                <Image size={16} />
-                              </div>
-                            ) : (
-                              <div className="bg-black/70 text-white rounded-full p-2">
-                                <Film size={16} />
-                              </div>
-                            )}
-                          </div>
                         </div>
                       </Card>
                     </Link>
