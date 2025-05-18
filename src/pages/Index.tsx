@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -16,7 +15,9 @@ import {
   Film,
   Trophy, // Replacing Football
   Landmark, // Replacing Castle
-  GraduationCap
+  GraduationCap,
+  UserPlus, // Added for volunteer component
+  HelpingHand // Added for volunteer component
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -403,6 +404,32 @@ const Index = () => {
                   </h3>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Volunteer Component - Added new component */}
+      <section className="bg-primary text-white py-12 mb-12">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-6 md:mb-0">
+              <h2 className="text-2xl font-semibold mb-2">Become a Volunteer</h2>
+              <p className="text-white/80">Join our community projects and make a difference in Bar Elias</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="outline" className="border-white text-white hover:bg-white/20" asChild>
+                <Link to="/volunteer">
+                  <UserPlus className="mr-2" size={18} />
+                  Register as Volunteer
+                </Link>
+              </Button>
+              <Button className="bg-white text-primary hover:bg-white/90" asChild>
+                <Link to="/projects">
+                  <HelpingHand className="mr-2" size={18} />
+                  View Projects
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
