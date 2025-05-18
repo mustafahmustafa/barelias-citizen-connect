@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileText, Mail, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const Terms = () => {
@@ -10,7 +10,7 @@ const Terms = () => {
       <section className="bg-primary text-white py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-4">Terms of Use</h1>
+            <h1 className="text-4xl font-bold mb-4">Terms and Conditions</h1>
             <p className="text-xl opacity-90">
               Guidelines for using the Municipality of Bar Elias website
             </p>
@@ -101,16 +101,18 @@ const Terms = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <FileText className="mr-2 h-6 w-6 text-primary" />
+                <Mail className="mr-2 h-6 w-6 text-primary" />
                 Contact Information
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
-                <p>If you have any questions about these Terms of Use, please contact us at:</p>
+                <p>If you have any questions about these Terms and Conditions, please contact:</p>
                 <div className="mt-4">
+                  <p className="font-semibold">Legal Affairs Office</p>
                   <p>Municipality of Bar Elias</p>
-                  <p>Email: <a href="mailto:info@barelias-municipality.gov.lb" className="text-primary hover:underline">info@barelias-municipality.gov.lb</a></p>
-                  <p>Phone: +961 (0)8 123 456</p>
+                  <p>Main Street, Bar Elias, Bekaa Valley, Lebanon</p>
+                  <p>Email: <a href="mailto:legal@barelias.gov.lb" className="text-primary hover:underline">legal@barelias.gov.lb</a></p>
+                  <p>Phone: <a href="tel:+961-6-xxxxxxx" className="text-primary hover:underline">+961-6-xxxxxxx</a></p>
                 </div>
               </div>
             </div>
