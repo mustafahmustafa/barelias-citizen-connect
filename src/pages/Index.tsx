@@ -271,8 +271,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Media Gallery Section - With location badges */}
+      
+      {/* Media Gallery Section - With location badges removed */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
@@ -302,11 +302,7 @@ const Index = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     
-                    {/* Location Badge */}
-                    <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs rounded-full px-3 py-1.5 flex items-center">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {item.location}
-                    </div>
+                    {/* Location Badge removed */}
                     
                     {item.type === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -336,11 +332,7 @@ const Index = () => {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           
-                          {/* Location Badge */}
-                          <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs rounded-full px-3 py-1.5 flex items-center">
-                            <MapPin className="w-3 h-3 mr-1" />
-                            {item.location}
-                          </div>
+                          {/* Location Badge removed */}
                           
                           {item.type === "video" && (
                             <div className="absolute inset-0 flex items-center justify-center">
