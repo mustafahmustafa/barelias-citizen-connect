@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -10,11 +9,21 @@ import {
   ArrowRight,
   Megaphone,
   Building,
-  MapPin
+  MapPin,
+  Image,
+  Play,
+  Film
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 // Hero banner data
 const heroBanners = [
@@ -66,28 +75,49 @@ const latestNews = [
   }
 ];
 
-// Events data
-const upcomingEvents = [
+// Media gallery data
+const mediaGallery = [
   {
     id: 1,
-    title: "Town Hall Meeting",
-    date: "May 28, 2025",
-    time: "6:00 PM - 8:00 PM",
-    location: "Municipal Building, Main Hall"
+    title: "Town Center Renovation Project",
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "Progress on the town center renovation project"
   },
   {
     id: 2,
-    title: "Community Clean-up Day",
-    date: "June 5, 2025",
-    time: "9:00 AM - 12:00 PM",
-    location: "Central Square"
+    title: "New Municipal Building Opening",
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "The grand opening of our new municipal building"
   },
   {
     id: 3,
-    title: "Summer Festival Planning Committee",
-    date: "June 12, 2025",
-    time: "5:30 PM - 7:00 PM",
-    location: "Community Center"
+    title: "Infrastructure Improvement Works",
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "Ongoing infrastructure improvements in Bar Elias"
+  },
+  {
+    id: 4,
+    title: "Public Parks and Green Spaces",
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "Our town's beautiful parks and green spaces"
+  },
+  {
+    id: 5,
+    title: "Town Hall Meeting Highlights",
+    type: "video",
+    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "Highlights from our recent town hall meeting"
+  },
+  {
+    id: 6,
+    title: "Community Festival",
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    description: "Scenes from our annual community festival"
   }
 ];
 
@@ -248,50 +278,101 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
+      {/* Media Gallery Section - Replacing Upcoming Events */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-semibold">Upcoming Events</h2>
+            <h2 className="text-3xl font-semibold">Media Gallery</h2>
             <Button variant="outline" asChild>
-              <Link to="/events">
-                View Calendar
+              <Link to="/gallery">
+                View All Media
                 <ArrowRight size={16} className="ml-2" />
               </Link>
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="card-hover">
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="bg-primary/10 rounded p-2 text-center min-w-[60px]">
-                      <div className="text-sm text-primary font-medium">
-                        {event.date.split(',')[0]}
+          {/* Desktop Gallery (Grid Layout) */}
+          <div className="hidden md:grid grid-cols-3 gap-6">
+            {mediaGallery.map((item) => (
+              <Card key={item.id} className="overflow-hidden card-hover">
+                <div className="relative h-60">
+                  <img 
+                    src={item.thumbnail} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  {item.type === "video" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
+                        <Play className="text-white" size={30} />
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold">{event.title}</h3>
+                  )}
+                  <div className="absolute top-3 right-3">
+                    {item.type === "image" ? (
+                      <div className="bg-black/70 text-white rounded-full p-2">
+                        <Image size={16} />
+                      </div>
+                    ) : (
+                      <div className="bg-black/70 text-white rounded-full p-2">
+                        <Film size={16} />
+                      </div>
+                    )}
                   </div>
-                  <div className="space-y-3 text-muted-foreground">
-                    <div className="flex items-center">
-                      <Clock size={18} className="mr-2 text-primary" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin size={18} className="mr-2 text-primary" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <Link to={`/events/${event.id}`} className="text-primary flex items-center">
-                      Event Details
-                      <ArrowRight size={16} className="ml-1" />
-                    </Link>
-                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </div>
               </Card>
             ))}
+          </div>
+
+          {/* Mobile Gallery (Carousel) */}
+          <div className="md:hidden">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {mediaGallery.map((item) => (
+                  <CarouselItem key={item.id}>
+                    <Card className="overflow-hidden card-hover">
+                      <div className="relative h-60">
+                        <img 
+                          src={item.thumbnail} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover"
+                        />
+                        {item.type === "video" && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
+                              <Play className="text-white" size={30} />
+                            </div>
+                          </div>
+                        )}
+                        <div className="absolute top-3 right-3">
+                          {item.type === "image" ? (
+                            <div className="bg-black/70 text-white rounded-full p-2">
+                              <Image size={16} />
+                            </div>
+                          ) : (
+                            <div className="bg-black/70 text-white rounded-full p-2">
+                              <Film size={16} />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-4">
+                <CarouselPrevious className="relative inset-auto mr-2" />
+                <CarouselNext className="relative inset-auto ml-2" />
+              </div>
+            </Carousel>
           </div>
         </div>
       </section>
