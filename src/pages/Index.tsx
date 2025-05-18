@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -13,8 +14,8 @@ import {
   Image,
   Play,
   Film,
-  Football,
-  Castle,
+  Trophy, // Replacing Football
+  Landmark, // Replacing Castle
   GraduationCap
 } from 'lucide-react';
 
@@ -60,21 +61,24 @@ const latestNews = [
     title: "Football Game: Al Nahda vs Naser Club",
     date: "July 25, 2025",
     excerpt: "An exciting football match between Al Nahda and Naser clubs will take place at Bar Elias Municipal Stadium. Join us for this thrilling local derby that promises great action and community spirit.",
-    image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    icon: Trophy // Using Trophy icon as alternative
   },
   {
     id: 2,
     title: "Opening of the Municipality Castle",
     date: "August 12, 2025",
     excerpt: "The historic Bar Elias Municipality Castle will open its doors to the public after extensive renovations. Explore this architectural gem and learn about our town's rich cultural heritage.",
-    image: "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    icon: Landmark // Using Landmark icon as alternative
   },
   {
     id: 3,
     title: "Grade 12 Graduation Ceremony",
     date: "September 5, 2025",
     excerpt: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will take place at the Municipal Cultural Center.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    icon: GraduationCap
   }
 ];
 
