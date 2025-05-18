@@ -254,11 +254,11 @@ const Services = () => {
                         <h2 className="text-2xl font-semibold mb-6">{category.title}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                           {filteredServices.map((service) => (
-                            <Card key={service.id} className="overflow-hidden card-hover">
-                              <CardContent className="p-6">
+                            <Card key={service.id} className="overflow-hidden card-hover h-full flex flex-col">
+                              <CardContent className="p-6 flex-1">
                                 <div className="text-3xl mb-4">{service.icon}</div>
                                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                                <p className="text-muted-foreground mb-4">{service.description}</p>
+                                <p className="text-muted-foreground mb-4 line-clamp-3 h-[4.5rem]">{service.description}</p>
                                 
                                 {service.forms.length > 0 && (
                                   <div className="space-y-2">
@@ -274,7 +274,7 @@ const Services = () => {
                                   </div>
                                 )}
                               </CardContent>
-                              <CardFooter className="p-0">
+                              <CardFooter className="p-0 mt-auto">
                                 <Button className="w-full rounded-none" variant="secondary" asChild>
                                   <a href={`/services/${category.id}/${service.id}`}>
                                     View Service Details
@@ -306,11 +306,11 @@ const Services = () => {
                   <div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {getFilteredServices(category.services).map((service) => (
-                        <Card key={service.id} className="overflow-hidden card-hover">
-                          <CardContent className="p-6">
+                        <Card key={service.id} className="overflow-hidden card-hover h-full flex flex-col">
+                          <CardContent className="p-6 flex-1">
                             <div className="text-3xl mb-4">{service.icon}</div>
                             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                            <p className="text-muted-foreground mb-4">{service.description}</p>
+                            <p className="text-muted-foreground mb-4 line-clamp-3 h-[4.5rem]">{service.description}</p>
                             
                             {service.forms.length > 0 && (
                               <div className="space-y-2">
@@ -326,7 +326,7 @@ const Services = () => {
                               </div>
                             )}
                           </CardContent>
-                          <CardFooter className="p-0">
+                          <CardFooter className="p-0 mt-auto">
                             <Button className="w-full rounded-none" variant="secondary" asChild>
                               <a href={`/services/${category.id}/${service.id}`}>
                                 View Service Details
