@@ -179,7 +179,7 @@ const News = () => {
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={item.image} 
-                      alt={item.title} 
+                      alt={`${item.title} - ${item.category} article from ${item.date}`} 
                       className="w-full h-full object-cover"
                     />
                   </div>

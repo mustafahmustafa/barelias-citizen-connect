@@ -9,54 +9,63 @@ const mediaGallery = [
     id: 1,
     type: "image",
     location: "Madinah",
+    title: "Town Center Renovation Project",
     thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 2,
     type: "image",
     location: "Riyadh",
+    title: "New Municipal Building Opening",
     thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 3,
     type: "image",
     location: "Jeddah",
+    title: "Infrastructure Improvement Works",
     thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 4,
     type: "image",
     location: "Abha",
+    title: "Public Parks and Green Spaces",
     thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 5,
     type: "video",
     location: "Riyadh",
+    title: "Town Hall Meeting Highlights",
     thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 6,
     type: "image",
     location: "Aseer",
+    title: "Community Festival",
     thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 7,
     type: "image",
     location: "Riyadh",
+    title: "Mountain View Landscape",
     thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 8,
     type: "image",
     location: "Madinah",
+    title: "Historical Site Restoration",
     thumbnail: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 9,
     type: "video",
     location: "Jeddah",
+    title: "Cultural Exchange Program",
     thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   }
 ];
@@ -84,11 +93,9 @@ const Gallery = () => {
                 <div className="relative w-full h-full">
                   <img 
                     src={item.thumbnail} 
-                    alt={`Gallery media from ${item.location}`} 
+                    alt={`${item.title} - ${item.type} from ${item.location}`} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  
-                  {/* Location Badge removed */}
                 </div>
               </Card>
             </Link>

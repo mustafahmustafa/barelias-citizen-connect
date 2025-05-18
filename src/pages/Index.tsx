@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -13,11 +14,11 @@ import {
   Image,
   Play,
   Film,
-  Trophy, // Replacing Football
-  Landmark, // Replacing Castle
+  Trophy,
+  Landmark,
   GraduationCap,
-  UserPlus, // Added for volunteer component
-  HelpingHand // Added for volunteer component
+  UserPlus,
+  HelpingHand
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -121,36 +122,42 @@ const mediaGallery = [
     id: 1,
     type: "image",
     location: "Madinah",
+    title: "Town Center Renovation",
     thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 2,
     type: "image",
     location: "Riyadh",
+    title: "Municipal Building",
     thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 3,
     type: "image",
     location: "Jeddah",
+    title: "Infrastructure Works",
     thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 4,
     type: "image",
     location: "Abha",
+    title: "Parks and Green Spaces",
     thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 5,
     type: "video",
     location: "Riyadh",
+    title: "Town Hall Meeting",
     thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 6,
     type: "image",
     location: "Aseer",
+    title: "Community Festival",
     thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   }
 ];
@@ -182,6 +189,7 @@ const Index = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
+            aria-hidden={currentBanner !== index}
           >
             <div className="container-custom h-full flex flex-col justify-center items-start">
               <div className="max-w-xl">
@@ -205,14 +213,14 @@ const Index = () => {
         
         {/* Banner Navigation Dots */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2">
-          {heroBanners.map((_, index) => (
+          {heroBanners.map((banner, index) => (
             <button
               key={index}
               onClick={() => setCurrentBanner(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
                 currentBanner === index ? 'bg-white' : 'bg-white/50 hover:bg-white/80'
               }`}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Go to slide ${index + 1}: ${banner.title}`}
             />
           ))}
         </div>
@@ -227,13 +235,13 @@ const Index = () => {
               <Link to={link.link} key={index}>
                 <Card className="p-6 h-full flex flex-col card-hover">
                   <div className={`${link.color} w-12 h-12 rounded-full flex items-center justify-center text-white mb-4`}>
-                    <link.icon size={24} />
+                    <link.icon size={24} aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{link.title}</h3>
                   <p className="text-muted-foreground flex-grow">{link.description}</p>
                   <div className="mt-4 flex items-center text-primary">
                     <span>Learn more</span>
-                    <ArrowRight size={16} className="ml-1" />
+                    <ArrowRight size={16} className="ml-1" aria-hidden="true" />
                   </div>
                 </Card>
               </Link>
@@ -250,7 +258,7 @@ const Index = () => {
             <Button variant="outline" asChild>
               <Link to="/news">
                 View All News
-                <ArrowRight size={16} className="ml-2" />
+                <ArrowRight size={16} className="ml-2" aria-hidden="true" />
               </Link>
             </Button>
           </div>
@@ -261,7 +269,7 @@ const Index = () => {
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={item.image} 
-                    alt={item.title} 
+                    alt={`${item.title} - News event on ${item.date}`} 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -271,7 +279,7 @@ const Index = () => {
                   <p className="text-muted-foreground mb-4">{item.excerpt}</p>
                   <Link to={`/news/${item.id}`} className="text-primary flex items-center">
                     Read More
-                    <ArrowRight size={16} className="ml-1" />
+                    <ArrowRight size={16} className="ml-1" aria-hidden="true" />
                   </Link>
                 </div>
               </Card>
@@ -280,7 +288,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Media Gallery Section - With location badges removed */}
+      {/* Media Gallery Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
@@ -293,7 +301,7 @@ const Index = () => {
             <Button variant="outline" asChild>
               <Link to="/gallery">
                 View All
-                <ArrowRight size={16} className="ml-2" />
+                <ArrowRight size={16} className="ml-2" aria-hidden="true" />
               </Link>
             </Button>
           </div>
@@ -306,16 +314,14 @@ const Index = () => {
                   <div className="relative h-60">
                     <img 
                       src={item.thumbnail} 
-                      alt={`Gallery media from ${item.location}`} 
+                      alt={`${item.title} - ${item.type} from ${item.location}`} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    
-                    {/* Location Badge removed */}
                     
                     {item.type === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
-                          <Play className="text-white" size={30} />
+                          <Play className="text-white" size={30} aria-hidden="true" />
                         </div>
                       </div>
                     )}
@@ -336,16 +342,14 @@ const Index = () => {
                         <div className="relative h-60">
                           <img 
                             src={item.thumbnail} 
-                            alt={`Gallery media from ${item.location}`}
+                            alt={`${item.title} - ${item.type} from ${item.location}`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          
-                          {/* Location Badge removed */}
                           
                           {item.type === "video" && (
                             <div className="absolute inset-0 flex items-center justify-center">
                               <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
-                                <Play className="text-white" size={30} />
+                                <Play className="text-white" size={30} aria-hidden="true" />
                               </div>
                             </div>
                           )}
@@ -356,8 +360,8 @@ const Index = () => {
                 ))}
               </CarouselContent>
               <div className="flex justify-center mt-4">
-                <CarouselPrevious className="relative inset-auto mr-2" />
-                <CarouselNext className="relative inset-auto ml-2" />
+                <CarouselPrevious className="relative inset-auto mr-2" aria-label="Previous slide" />
+                <CarouselNext className="relative inset-auto ml-2" aria-label="Next slide" />
               </div>
             </Carousel>
           </div>
@@ -381,7 +385,7 @@ const Index = () => {
                 <Button asChild>
                   <Link to="/about">
                     Learn More
-                    <ArrowRight size={16} className="ml-2" />
+                    <ArrowRight size={16} className="ml-2" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
@@ -392,13 +396,13 @@ const Index = () => {
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                alt="Bar Elias Municipality Building"
+                alt="Bar Elias Municipality Building - Main administrative center located in the town center"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex items-center">
-                  <Building size={24} className="text-white mr-2" />
+                  <Building size={24} className="text-white mr-2" aria-hidden="true" />
                   <h3 className="text-xl text-white font-medium">
                     Municipal Building
                   </h3>
@@ -409,7 +413,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Volunteer Component - Added new component */}
+      {/* Volunteer Component */}
       <section className="bg-primary text-white py-12 mb-12">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -420,13 +424,13 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="outline" className="border-white text-white hover:bg-white/20" asChild>
                 <Link to="/volunteer">
-                  <UserPlus className="mr-2" size={18} />
+                  <UserPlus className="mr-2" size={18} aria-hidden="true" />
                   Register as Volunteer
                 </Link>
               </Button>
               <Button className="bg-white text-primary hover:bg-white/90" asChild>
                 <Link to="/projects">
-                  <HelpingHand className="mr-2" size={18} />
+                  <HelpingHand className="mr-2" size={18} aria-hidden="true" />
                   View Projects
                 </Link>
               </Button>

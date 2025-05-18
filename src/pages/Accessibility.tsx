@@ -30,7 +30,7 @@ const AccessibilityPage = () => {
               </p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 1. Commitment to Accessibility
               </h2>
               <Separator className="my-4" />
@@ -48,7 +48,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 2. Measures to Support Accessibility
               </h2>
               <Separator className="my-4" />
@@ -68,7 +68,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 3. Known Limitations & Workarounds
               </h2>
               <Separator className="my-4" />
@@ -83,7 +83,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 4. Compatibility with Browsers & Assistive Technologies
               </h2>
               <Separator className="my-4" />
@@ -106,7 +106,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 5. Ongoing Accessibility Efforts
               </h2>
               <Separator className="my-4" />
@@ -119,7 +119,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Mail className="mr-2 h-6 w-6 text-primary" />
+                <Mail className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 6. Feedback & Contact Information
               </h2>
               <Separator className="my-4" />
@@ -142,7 +142,7 @@ const AccessibilityPage = () => {
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
-                <Accessibility className="mr-2 h-6 w-6 text-primary" />
+                <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
                 7. Review & Updates
               </h2>
               <Separator className="my-4" />

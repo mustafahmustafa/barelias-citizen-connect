@@ -170,7 +170,7 @@ const GalleryItem = () => {
               <AspectRatio ratio={16 / 9} className="bg-muted">
                 <img 
                   src={currentItem.fullImage || currentItem.thumbnail} 
-                  alt={currentItem.title}
+                  alt={`${currentItem.title} - A detailed view of the ${currentItem.description} in ${currentItem.location}`}
                   className="w-full h-full object-cover" 
                 />
                 <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white rounded-full px-3 py-1.5 flex items-center">
@@ -183,7 +183,7 @@ const GalleryItem = () => {
                 {currentItem.videoUrl ? (
                   <iframe
                     src={currentItem.videoUrl}
-                    title={currentItem.title}
+                    title={`Video: ${currentItem.title} - ${currentItem.description}`}
                     className="w-full h-full"
                     allowFullScreen
                   ></iframe>
