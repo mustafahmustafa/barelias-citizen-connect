@@ -12,7 +12,10 @@ import {
   MapPin,
   Image,
   Play,
-  Film
+  Film,
+  Football,
+  Castle,
+  GraduationCap
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -50,28 +53,28 @@ const heroBanners = [
   }
 ];
 
-// News items data
+// News items data - Updated with new content
 const latestNews = [
   {
     id: 1,
-    title: "Water Supply Improvement Project Begins Next Week",
-    date: "May 15, 2025",
-    excerpt: "The municipality is launching a comprehensive water infrastructure upgrade project to improve water quality and supply reliability.",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    title: "Football Game: Al Nahda vs Naser Club",
+    date: "July 25, 2025",
+    excerpt: "An exciting football match between Al Nahda and Naser clubs will take place at Bar Elias Municipal Stadium. Join us for this thrilling local derby that promises great action and community spirit.",
+    image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 2,
-    title: "New Public Park Opening Celebration",
-    date: "May 10, 2025",
-    excerpt: "Join us for the grand opening of our new community park featuring playgrounds, walking paths, and green spaces for all residents.",
-    image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    title: "Opening of the Municipality Castle",
+    date: "August 12, 2025",
+    excerpt: "The historic Bar Elias Municipality Castle will open its doors to the public after extensive renovations. Explore this architectural gem and learn about our town's rich cultural heritage.",
+    image: "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 3,
-    title: "Municipal Budget Approved for Next Fiscal Year",
-    date: "May 5, 2025",
-    excerpt: "The town council has approved the municipal budget for the upcoming fiscal year, with increased funding for infrastructure and community services.",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21ed1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    title: "Grade 12 Graduation Ceremony",
+    date: "September 5, 2025",
+    excerpt: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will take place at the Municipal Cultural Center.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   }
 ];
 
