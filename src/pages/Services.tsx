@@ -131,6 +131,26 @@ const allServices = [
         forms: ["Vendor Registration Form", "Bid Submission Form"],
       }
     ]
+  },
+  {
+    id: "documents",
+    title: "Official Documents",
+    services: [
+      {
+        id: "residency-letter",
+        title: "Residency Letter Service",
+        description: "Official documentation confirming your residency status in the municipality for legal, educational, or employment purposes.",
+        icon: "📄",
+        forms: ["Residency Letter Application", "Identity Verification Form"],
+      },
+      {
+        id: "birth-certificates",
+        title: "Birth Certificates",
+        description: "Services related to obtaining or amending birth certificates and vital records.",
+        icon: "👶",
+        forms: ["Birth Certificate Request", "Amendment Request Form"],
+      }
+    ]
   }
 ];
 
