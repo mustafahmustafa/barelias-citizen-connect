@@ -14,6 +14,8 @@ import Events from "./pages/Events";
 import Report from "./pages/Report";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Gallery from "./pages/Gallery";
+import GalleryItem from "./pages/GalleryItem";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
               <Route path="/events" element={<Events />} />
               <Route path="/report" element={<Report />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/gallery/:id" element={<GalleryItem />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -75,52 +75,6 @@ const latestNews = [
   }
 ];
 
-// Media gallery data
-const mediaGallery = [
-  {
-    id: 1,
-    title: "Town Center Renovation Project",
-    type: "image",
-    thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "Progress on the town center renovation project"
-  },
-  {
-    id: 2,
-    title: "New Municipal Building Opening",
-    type: "image",
-    thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "The grand opening of our new municipal building"
-  },
-  {
-    id: 3,
-    title: "Infrastructure Improvement Works",
-    type: "image",
-    thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "Ongoing infrastructure improvements in Bar Elias"
-  },
-  {
-    id: 4,
-    title: "Public Parks and Green Spaces",
-    type: "image",
-    thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "Our town's beautiful parks and green spaces"
-  },
-  {
-    id: 5,
-    title: "Town Hall Meeting Highlights",
-    type: "video",
-    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "Highlights from our recent town hall meeting"
-  },
-  {
-    id: 6,
-    title: "Community Festival",
-    type: "image",
-    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    description: "Scenes from our annual community festival"
-  }
-];
-
 // Quick links data
 const quickLinks = [
   {
@@ -150,6 +104,40 @@ const quickLinks = [
     icon: Phone,
     link: "/contact",
     color: "bg-purple-500"
+  }
+];
+
+// Media gallery data - Keep IDs the same for routing purposes
+const mediaGallery = [
+  {
+    id: 1,
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 2,
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 3,
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 4,
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 5,
+    type: "video",
+    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 6,
+    type: "image",
+    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   }
 ];
 
@@ -278,7 +266,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Media Gallery Section - Replacing Upcoming Events */}
+      {/* Media Gallery Section - Simplified with only images/videos */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
@@ -294,37 +282,35 @@ const Index = () => {
           {/* Desktop Gallery (Grid Layout) */}
           <div className="hidden md:grid grid-cols-3 gap-6">
             {mediaGallery.map((item) => (
-              <Card key={item.id} className="overflow-hidden card-hover">
-                <div className="relative h-60">
-                  <img 
-                    src={item.thumbnail} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover"
-                  />
-                  {item.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
-                        <Play className="text-white" size={30} />
-                      </div>
-                    </div>
-                  )}
-                  <div className="absolute top-3 right-3">
-                    {item.type === "image" ? (
-                      <div className="bg-black/70 text-white rounded-full p-2">
-                        <Image size={16} />
-                      </div>
-                    ) : (
-                      <div className="bg-black/70 text-white rounded-full p-2">
-                        <Film size={16} />
+              <Link to={`/gallery/${item.id}`} key={item.id}>
+                <Card className="overflow-hidden card-hover">
+                  <div className="relative h-60">
+                    <img 
+                      src={item.thumbnail} 
+                      alt="Gallery media" 
+                      className="w-full h-full object-cover"
+                    />
+                    {item.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
+                          <Play className="text-white" size={30} />
+                        </div>
                       </div>
                     )}
+                    <div className="absolute top-3 right-3">
+                      {item.type === "image" ? (
+                        <div className="bg-black/70 text-white rounded-full p-2">
+                          <Image size={16} />
+                        </div>
+                      ) : (
+                        <div className="bg-black/70 text-white rounded-full p-2">
+                          <Film size={16} />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             ))}
           </div>
 
@@ -334,37 +320,35 @@ const Index = () => {
               <CarouselContent>
                 {mediaGallery.map((item) => (
                   <CarouselItem key={item.id}>
-                    <Card className="overflow-hidden card-hover">
-                      <div className="relative h-60">
-                        <img 
-                          src={item.thumbnail} 
-                          alt={item.title} 
-                          className="w-full h-full object-cover"
-                        />
-                        {item.type === "video" && (
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
-                              <Play className="text-white" size={30} />
-                            </div>
-                          </div>
-                        )}
-                        <div className="absolute top-3 right-3">
-                          {item.type === "image" ? (
-                            <div className="bg-black/70 text-white rounded-full p-2">
-                              <Image size={16} />
-                            </div>
-                          ) : (
-                            <div className="bg-black/70 text-white rounded-full p-2">
-                              <Film size={16} />
+                    <Link to={`/gallery/${item.id}`}>
+                      <Card className="overflow-hidden card-hover">
+                        <div className="relative h-60">
+                          <img 
+                            src={item.thumbnail} 
+                            alt="Gallery media" 
+                            className="w-full h-full object-cover"
+                          />
+                          {item.type === "video" && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center">
+                                <Play className="text-white" size={30} />
+                              </div>
                             </div>
                           )}
+                          <div className="absolute top-3 right-3">
+                            {item.type === "image" ? (
+                              <div className="bg-black/70 text-white rounded-full p-2">
+                                <Image size={16} />
+                              </div>
+                            ) : (
+                              <div className="bg-black/70 text-white rounded-full p-2">
+                                <Film size={16} />
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                      </div>
-                    </Card>
+                      </Card>
+                    </Link>
                   </CarouselItem>
                 ))}
               </CarouselContent>
