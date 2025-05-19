@@ -124,7 +124,7 @@ export const translations = {
     optional: "optional",
     sendMessageBtn: "Send Message",
     contactInfoTitle: "Contact Information",
-    address: "Address",
+    addressLabel: "Address",
     municipalBuilding: "Municipal Building",
     mainStreet: "Main Street",
     barEliasLocation: "Bar Elias, Bekaa Valley",
@@ -241,10 +241,87 @@ export const translations = {
     termsDescription: "Guidelines for using the Municipality of Bar Elias website",
     accessibilityTitle: "Accessibility Statement",
     accessibilityDescription: "Our commitment to digital inclusion",
-    lastUpdated: "Last updated: May 18, 2025"
+    lastUpdated: "Last updated: May 18, 2025",
+    
+    // Events page
+    eventsTitle: "Events & Calendar",
+    eventsDescription: "Stay informed about upcoming events, meetings, and community activities in Bar Elias.",
+    listView: "List View",
+    calendarView: "Calendar View",
+    selectDate: "Select a date",
+    filterEvents: "Filter Events",
+    categories: "Categories",
+    timeRange: "Time Range",
+    dateFrom: "Date From",
+    dateTo: "Date To",
+    sortBy: "Sort By",
+    
+    // Example events
+    councilMeeting: "Monthly Council Meeting",
+    councilMeetingDesc: "Meeting to discuss current issues and upcoming initiatives. All citizens are welcome to attend and participate.",
+    cleanupDay: "Community Cleanup Day",
+    cleanupDayDesc: "Join a comprehensive cleaning campaign. Volunteers will help collect waste, plant flowers, and beautify public spaces.",
+    festivalCommittee: "Summer Festival Planning Committee",
+    festivalCommitteeDesc: "Annual festival committee meeting to discuss logistics, activities, and vendor applications.",
+    infrastructureForum: "Public Infrastructure Forum",
+    infrastructureForumDesc: "Public forum to discuss upcoming projects (road repairs, public lighting, water network upgrades).",
+    youthSports: "Youth Sports Tournament",
+    youthSportsDesc: "Annual tournament for youth sporting competitions (football, basketball, volleyball).",
+    communityEvent: "Do you have a community event?",
+    submitEvent: "Submit an event for review to add to the municipal calendar.",
+    submitYourEvent: "Submit Your Event",
+    
+    // Accessibility page
+    accessibilityStatement: "Accessibility Statement",
+    digitalInclusion: "Our commitment to digital inclusion",
+    tryAccessibilityTool: "Try our accessibility tool",
+    accessibilityToolDesc: "Press the 'A' button at the bottom of the screen to adjust text size, contrast, and other settings to suit your needs.",
+    accessibilityCommitment: "Our Accessibility Commitment",
+    wcagCompliance: "We aim for full compliance with W3C's WCAG 2.1 Level AA standards.",
+    perceptionOperation: "We apply principles of perception, operation, understanding, and robustness for all users.",
+    basedOn: "Our efforts are based on:",
+    lebaneseAct: "Lebanese Law 220/2000 for protecting the rights of persons with disabilities.",
+    unConvention: "UN Convention on the Rights of Persons with Disabilities (ratified in 2007).",
+    accessibilityMeasures: "Our Measures to Support Accessibility",
+    semanticHTML: "Using semantic HTML elements (like `<header>`, `<nav>`, `<main>`, `<footer>`).",
+    altText: "Providing alt text for all images, icons, and non-text content.",
+    keyboardNavigation: "Ensuring unobstructed keyboard navigation.",
+    colorContrast: "Maintaining sufficient color contrast for text and interactive elements.",
+    captionsTranscripts: "Adding captions and transcripts for all audio and video content.",
+    formDesign: "Designing forms with clear labels, instructions, and understandable error messages.",
+    headingStructure: "Structuring headings (`<h1>`–`<h6>`) sequentially for easy navigation using screen readers.",
+    regularTesting: "Regular testing with automated tools (Axe, Lighthouse) and manual checking with screen readers (NVDA, VoiceOver).",
+    knownLimitations: "Known Limitations and Alternatives",
+    mayEncounter: "You may encounter content like:",
+    pdfFiles: "PDF files not fully tagged for assistive devices.",
+    interactiveMaps: "Interactive maps or charts that don't convey all data to screen readers.",
+    solution: "Solution: Request information in an alternative format (plain text, high-contrast PDF, or audio recording) within 3 business days.",
+    browserCompatibility: "Browser and Assistive Technology Compatibility",
+    supportedBrowsers: "Supported by us:",
+    browsers: "Browsers: Chrome, Firefox, Edge, Safari (latest versions)",
+    assistiveTech: "Assistive Tools: NVDA (Windows), VoiceOver (Mac/iOS), TalkBack (Android)",
+    recommendation: "We recommend updating your browser and assistive tools for the best experience.",
+    ongoingEfforts: "Our Ongoing Efforts",
+    quarterlyAudits: "Quarterly audits to measure and improve compliance.",
+    annualTraining: "Annual training for development team on accessibility design and coding.",
+    designSystem: "Incorporating accessibility into our design system to ensure consistent standards at launch.",
+    feedback: "Accessibility Feedback and Contact",
+    appreciateFeedback: "We appreciate your feedback:",
+    accessibilityCoordinator: "Accessibility Coordinator",
+    accessibilityEmail: "Email: accessibility@barelias.gov.lb",
+    accessibilityPhone: "Phone: +961-6-xxxxxxx",
+    accessibilityOfficeHours: "Office Hours: Monday–Friday 8:00–16:00",
+    pleaseSpecify: "Please specify:",
+    pageTitle: "Page title or description of where you encountered the issue.",
+    problemNature: "Nature of the problem (e.g., missing alt text, keyboard issue).",
+    preferredFormat: "Preferred format to receive information.",
+    responseCommitment: "We commit to responding within two business days and addressing issues as promptly as possible.",
+    reviewUpdate: "Review and Update",
+    statementReviewed: "This statement is reviewed annually or when significant changes occur. The 'Last Updated' date reflects the most recent review.",
+    thankYou: "Thank you for helping us make the Bar Elias Municipality website accessible to everyone!"
   },
   ar: {
-    // Header - القائمة الرئيسية
+    // القائمة الرئيسية - Header
     home: "الرئيسية",
     about: "حول",
     services: "الخدمات",
@@ -255,7 +332,7 @@ export const translations = {
     emergency: "جهات الاتصال الطارئة",
     portal: "بوابة البلدية",
     
-    // Footer - تذييل الصفحة
+    // تذييل الصفحة - Footer
     quickLinks: "روابط سريعة",
     ourServices: "خدماتنا",
     contactInfo: "معلومات الاتصال",
@@ -269,7 +346,7 @@ export const translations = {
     accessibility: "إمكانية الوصول",
     allRightsReserved: "جميع الحقوق محفوظة",
     
-    // Home Page - الصفحة الرئيسية
+    // الصفحة الرئيسية - Home Page
     welcomeToMunicipality: "مرحبًا بكم في بلدية برا إلياس",
     welcomeDescription: "نخدم المجتمع بتفانٍ وتميّز. استكشف خدماتنا، واطلع على آخر الأخبار والفعاليات، وتواصل مع مسؤولي البلدية.",
     exploreServices: "استكشف الخدمات",
@@ -287,7 +364,7 @@ export const translations = {
     browseGallery: "استعرض المعرض",
     quickAccess: "الوصول السريع",
     
-    // About Page - صفحة "حول"
+    // صفحة "حول" - About Page
     aboutBarElias: "عن بلدية برا إلياس",
     aboutDescription: "بلدية برا إلياس مكرّسة لخدمة مجتمعنا وخلق بيئة مزدهرة ومستدامة لجميع السكان والزوار في سهل البقاع الجميل.",
     ourHistory: "تاريخنا",
@@ -333,7 +410,7 @@ export const translations = {
     administrativeBoundaries: "حدودنا الإدارية",
     locationDescription: "برا إلياس تقع في سهل البقاع الخصيب، وتخدم العديد من القرى والمجتمعات في المنطقة",
     
-    // Volunteer Page - صفحة التطوع
+    // صفحة التطوع - Volunteer Page
     volunteer: "التطوع",
     becomeVolunteer: "كن متطوعًا",
     volunteerDescription: "انضم إلى مشاريعنا المجتمعية وساهم في خدمة برا إلياس",
@@ -343,7 +420,7 @@ export const translations = {
     lastName: "اسم العائلة",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
-    address: "العنوان",
+    addressLabel: "العنوان",
     areasInterest: "مجالات الاهتمام",
     availability: "التوفر",
     prevExperience: "خبرة التطوع السابقة (اختياري)",
@@ -356,7 +433,7 @@ export const translations = {
     selectArea: "اختر مجالًا",
     selectAvailability: "اختر التوفر",
     
-    // Contact Page - صفحة "اتصل بنا"
+    // صفحة "اتصل بنا" - Contact Page
     getInTouch: "نحن هنا لمساعدتك في أي استفسارات أو ملاحظات.",
     sendMessage: "أرسل لنا رسالة",
     fullName: "الاسم الكامل",
@@ -367,7 +444,7 @@ export const translations = {
     optional: "اختياري",
     sendMessageBtn: "إرسال الرسالة",
     contactInfoTitle: "معلومات الاتصال",
-    address: "العنوان",
+    address: "العنوان البريدي",
     municipalBuilding: "مبنى البلدية",
     mainStreet: "الشارع الرئيسي",
     barEliasLocation: "برا إلياس، سهل البقاع",
@@ -398,7 +475,7 @@ export const translations = {
     environmentalAffairs: "البيئة",
     environmentalDescription: "الإشراف على برامج إدارة النفايات والاستدامة البيئية.",
     
-    // Services Page - صفحة الخدمات
+    // صفحة الخدمات - Services Page
     municipalServicesTitle: "الخدمات البلدية",
     exploreServices: "استكشف الخدمات التي تقدمها بلدية برا إلياس",
     administrativeServicesTitle: "الخدمات الإدارية",
@@ -437,7 +514,7 @@ export const translations = {
     greenSpacesDescription: "صيانة الحدائق والمناطق العامة الخضراء",
     accessService: "الوصول إلى الخدمة",
     
-    // Report Page - صفحة الإبلاغ عن مشكلة
+    // صفحة الإبلاغ عن مشكلة - Report Page
     reportIssueTitle: "الإبلاغ عن مشكلة",
     reportIssueDescription: "ساعدنا في تحسين برا إلياس من خلال الإبلاغ عن المشاكل البلدية مثل الحفر، وأضواء الشوارع المعطلة، أو غيرها من مشاكل البنية التحتية.",
     whereIssue: "أين تقع المشكلة؟",
@@ -477,13 +554,90 @@ export const translations = {
     afterSubmitAnswer: "بعد التقديم، تتم مراجعة تقريرك من قبل موظفي البلدية وإحالته إلى القسم المختص. ستتلقى رسالة تأكيد بالبريد الإلكتروني مع رقم مرجعي للمتابعة.",
     timeToAddress: "كم من الوقت يستغرق معالجة المشاكل المبلّغ عنها؟",
     
-    // Privacy, Terms, Accessibility pages - صفحة الخصوصية وشروط الاستخدام وإمكانية الوصول
+    // صفحة الخصوصية وشروط الاستخدام وإمكانية الوصول - Privacy, Terms, Accessibility pages
     privacyPolicy: "سياسة الخصوصية",
     privacyDescription: "كيف تجمع بلدية برا إلياس المعلومات الشخصية وتستخدمها وتحميها",
     termsConditions: "شروط الاستخدام",
     termsDescription: "إرشادات استخدام موقع بلدية برا إلياس",
     accessibilityTitle: "بيان إمكانية الوصول",
     accessibilityDescription: "التزامنا بالشمول الرقمي",
-    lastUpdated: "آخر تحديث: 18 مايو 2025"
+    lastUpdated: "آخر تحديث: 18 مايو 2025",
+    
+    // صفحة "الفعاليات" - Events page
+    eventsTitle: "الفعاليات والتقويم",
+    eventsDescription: "ابقَ على اطلاع بالفعاليات والاجتماعات والأنشطة المجتمعية القادمة في برا إلياس.",
+    listView: "عرض بصيغة قائمة",
+    calendarView: "عرض التقويم",
+    selectDate: "اختر تاريخًا",
+    filterEvents: "تصفية الفعاليات",
+    categories: "الفئات",
+    timeRange: "النطاق الزمني",
+    dateFrom: "التاريخ من",
+    dateTo: "التاريخ إلى",
+    sortBy: "ترتيب حسب",
+    
+    // أمثلة على الفعاليات - Example events
+    councilMeeting: "اجتماع المجلس البلدي الشهري",
+    councilMeetingDesc: "اجتماع لمناقشة القضايا الحالية والمبادرات القادمة. مرحبٌ بجميع المواطنين للحضور والمشاركة.",
+    cleanupDay: "يوم تنظيف المجتمع",
+    cleanupDayDesc: "شارك في حملة تنظيف واسعة. سيساعد المتطوعون في جمع النفايات وزراعة الزهور وتجميل المساحات العامة.",
+    festivalCommittee: "لجنة تخطيط مهرجان الصيف",
+    festivalCommitteeDesc: "اجتماع لجنة المهرجان السنوي لمناقشة اللوجستيات والأنشطة وطلبات الباعة.",
+    infrastructureForum: "منتدى البنية التحتية العامة",
+    infrastructureForumDesc: "منتدى عام لمناقشة المشاريع القادمة (ترميم الطرق، الإضاءة العامة، ترقية شبكات المياه).",
+    youthSports: "بطولة الرياضة للشباب",
+    youthSportsDesc: "بطولة سنوية للمسابقات الرياضية للشباب (كرة القدم، كرة السلة، الكرة الطائرة).",
+    communityEvent: "هل لديك فعالية مجتمعية؟",
+    submitEvent: "قدم فعالية للمراجعة لإضافتها إلى تقويم البلدية.",
+    submitYourEvent: "قدم فعاليتك",
+    
+    // صفحة "إمكانية الوصول" - Accessibility page
+    accessibilityStatement: "بيان إمكانية الوصول",
+    digitalInclusion: "التزامنا بالشمول الرقمي",
+    tryAccessibilityTool: "جرّب أداتنا لإمكانية الوصول",
+    accessibilityToolDesc: "اضغط زر \"A\" أسفل الشاشة لتعديل حجم النص والتباين والإعدادات الأخرى لتناسب احتياجاتك.",
+    accessibilityCommitment: "التزامنا بإمكانية الوصول",
+    wcagCompliance: "نهدف إلى الامتثال الكامل لمعايير WCAG 2.1 مستوى AA الصادرة عن W3C.",
+    perceptionOperation: "نطبّق مبادئ الإدراك، والتشغيل، والفهم، والموثوقية لكل المستخدمين.",
+    basedOn: "تستند جهودنا إلى:",
+    lebaneseAct: "القانون اللبناني رقم 220/2000 لحماية حقوق الأشخاص ذوي الإعاقة.",
+    unConvention: "اتفاقية الأمم المتحدة لحقوق الأشخاص ذوي الإعاقة (ratified عام 2007).",
+    accessibilityMeasures: "إجراءاتنا لدعم إمكانية الوصول",
+    semanticHTML: "استخدام عناصر HTML دلالية (مثل `<header>، <nav>، <main>، <footer>`).",
+    altText: "توفير نص بديل لكل الصور والرموز والمحتوى غير النصي.",
+    keyboardNavigation: "ضمان التنقل عبر لوحة المفاتيح دون عوائق.",
+    colorContrast: "المحافظة على تباين لوني كافٍ للنصوص والعناصر التفاعلية.",
+    captionsTranscripts: "إضافة ترجمات نصية ونصوص توضيحية لكل المحتوى الصوتي والمرئي.",
+    formDesign: "تصميم النماذج بعناوين واضحة وإرشادات ورسائل خطأ مفهومة.",
+    headingStructure: "هيكلة العناوين (`<h1>`–`<h6>`) تسلسليًا لسهولة التنقل باستخدام قارئات الشاشة.",
+    regularTesting: "اختبار دوري بالأدوات الآلية (Axe، Lighthouse) والفحص اليدوي بقارئات شاشة (NVDA، VoiceOver).",
+    knownLimitations: "القيود المعروفة والحلول البديلة",
+    mayEncounter: "قد تواجه محتوى مثل:",
+    pdfFiles: "ملفات PDF غير موسومة بالكامل للأجهزة المساعدة.",
+    interactiveMaps: "خرائط تفاعلية أو رسوم بيانية لا تعرض كل البيانات لقارئات الشاشة.",
+    solution: "الحل: اطلب المعلومات بصيغة بديلة (نص عادي، PDF عالي التباين، أو تسجيل صوتي) خلال ٣ أيام عمل.",
+    browserCompatibility: "التوافق مع المستعرضات والأدوات المساعدة",
+    supportedBrowsers: "مدعوم لدينا:",
+    browsers: "المستعرضات: Chrome، Firefox، Edge، Safari (الأحدث)",
+    assistiveTech: "الأدوات المساعدة: NVDA (ويندوز)، VoiceOver (ماك/iOS)، TalkBack (أندرويد)",
+    recommendation: "نوصي بتحديث المستعرض والأدوات المساعدة للحصول على أفضل تجربة.",
+    ongoingEfforts: "جهودنا المتواصلة",
+    quarterlyAudits: "تدقيق ربع سنوي لقياس الالتزام وتحسينه.",
+    annualTraining: "تدريب سنوي لفريق التطوير على تصميم وبرمجة الوصول.",
+    designSystem: "تضمين إمكانية الوصول في نظام التصميم لضمان معايير مطابقة عند الإطلاق.",
+    feedback: "الملاحظات وتواصل إمكانية الوصول",
+    appreciateFeedback: "نقدّر ملاحظاتك:",
+    accessibilityCoordinator: "منسق إمكانية الوصول",
+    accessibilityEmail: "البريد الإلكتروني: accessibility@barelias.gov.lb",
+    accessibilityPhone: "الهاتف: +961-6-xxxxxxx",
+    accessibilityOfficeHours: "ساعات العمل: الإثنين–الجمعة ٨:٠٠–١٦:٠٠",
+    pleaseSpecify: "يرجى توضيح:",
+    pageTitle: "عنوان الصفحة أو وصف المكان الذي واجهت فيه المشكلة.",
+    problemNature: "طبيعة المشكلة (مثلاً: نقص نص بديل، مشكلة في لوحة المفاتيح).",
+    preferredFormat: "الصيغة المفضّلة لتلقي المعلومات.",
+    responseCommitment: "نلتزم بالرد خلال يومَي عمل وحل المشكلات بأسرع وقتٍ ممكن.",
+    reviewUpdate: "المراجعة والتحديث",
+    statementReviewed: "يُراجع هذا البيان سنويًا أو عند تغييرات كبيرة. تاريخ \"آخر تحديث\" يعكس أحدث مراجعة.",
+    thankYou: "شكرًا لمساعدتنا في جعل موقع بلدية برا إلياس متاحًا للجميع!"
   }
 };

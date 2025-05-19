@@ -19,7 +19,9 @@ const LanguageSwitcher = () => {
       dir={direction}
     >
       <Languages className="h-4 w-4" />
-      <span className="ml-2 hidden lg:inline">{language === 'en' ? 'عربي' : 'English'}</span>
+      <span className={`ml-2 hidden lg:inline ${language === 'ar' ? 'mr-2 ml-0' : ''}`}>
+        {language === 'en' ? 'عربي' : 'English'}
+      </span>
     </Button>
   );
 };
