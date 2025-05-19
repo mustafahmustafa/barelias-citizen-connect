@@ -9,7 +9,7 @@ declare module 'react-i18next' {
   }
   
   export function useTranslation(ns?: string | string[]): UseTranslationResponse;
-  export function initReactI18next: {
+  export const initReactI18next: {
     type: string;
     [key: string]: any;
   };
