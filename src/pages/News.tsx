@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Search, Calendar, Tag, ArrowRight } from 'lucide-react';
 import { 
@@ -28,12 +27,12 @@ import {
 const allNews = [
   {
     id: 1,
-    title: "Water Supply Improvement Project Begins Next Week",
+    title: "Renovation of Public Garden Begins Next Month",
     date: "May 15, 2025",
-    excerpt: "The municipality is launching a comprehensive water infrastructure upgrade project to improve water quality and supply reliability across all neighborhoods.",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    category: "Infrastructure",
-    content: "The municipality is launching a comprehensive water infrastructure upgrade project..."
+    excerpt: "The municipality is launching a comprehensive renovation project for the central public garden to create a more enjoyable green space for all residents.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    category: "Environment",
+    content: "The municipality is launching a comprehensive renovation project for the central public garden..."
   },
   {
     id: 2,
@@ -97,6 +96,15 @@ const allNews = [
     image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     category: "Safety",
     content: "The municipality will host a series of public safety workshops..."
+  },
+  {
+    id: 9,
+    title: "Grade 12 Graduation Ceremony",
+    date: "May 20, 2025",
+    excerpt: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives.",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    category: "Education",
+    content: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives..."
   }
 ];
 
@@ -108,7 +116,8 @@ const categories = [
   "Administration", 
   "Community", 
   "Environment", 
-  "Safety"
+  "Safety",
+  "Education"
 ];
 
 const News = () => {
