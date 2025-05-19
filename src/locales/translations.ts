@@ -29,7 +29,7 @@ export const translations = {
     // Home Page
     welcomeToMunicipality: "Welcome to Bar Elias Municipality",
     welcomeDescription: "We serve the community with dedication and excellence. Explore our services, stay updated with news and events, and connect with municipal officials.",
-    exploreServices: "Explore Services",
+    exploreServicesLink: "Explore Services", // Renamed from exploreServices to exploreServicesLink
     contactUs: "Contact Us",
     importantAnnouncements: "Important Announcements",
     viewAllAnnouncements: "View All Announcements",
@@ -349,7 +349,7 @@ export const translations = {
     // الصفحة الرئيسية - Home Page
     welcomeToMunicipality: "مرحبًا بكم في بلدية برا إلياس",
     welcomeDescription: "نخدم المجتمع بتفانٍ وتميّز. استكشف خدماتنا، واطلع على آخر الأخبار والفعاليات، وتواصل مع مسؤولي البلدية.",
-    exploreServices: "استكشف الخدمات",
+    exploreServicesLink: "استكشف الخدمات", // Renamed from exploreServices to exploreServicesLink
     contactUs: "اتصل بنا",
     importantAnnouncements: "إعلانات هامة",
     viewAllAnnouncements: "عرض جميع الإعلانات",
