@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -19,6 +20,7 @@ import FamiliesTable from '@/components/families/FamiliesTable';
 import FamilyDetailModal from '@/components/families/FamilyDetailModal';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 // Sample data - in a real app this would come from an API
 const sampleFamilies = [
@@ -70,6 +72,7 @@ const FamiliesDirectory = () => {
   const [selectedFamily, setSelectedFamily] = useState<Family | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const itemsPerPage = 10;
+  const { t } = useTranslation();
 
   // Filter families based on search term
   const filteredFamilies = sampleFamilies.filter(family => 
@@ -113,27 +116,27 @@ const FamiliesDirectory = () => {
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link to="/">Home</Link>
+              <Link to="/">{t('families.home')}</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link to="/services">Services</Link>
+              <Link to="/services">{t('families.services')}</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Family Registry</BreadcrumbPage>
+            <BreadcrumbPage>{t('families.familyRegistry')}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
       {/* Page Title */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-primary mb-2">Families Directory</h1>
+        <h1 className="text-3xl font-bold text-primary mb-2">{t('families.directory')}</h1>
         <p className="text-muted-foreground">
-          View and search all registered families in the Municipality of Bar Elias
+          {t('families.subtitle')}
         </p>
       </div>
 
@@ -142,16 +145,16 @@ const FamiliesDirectory = () => {
         <div className="relative flex-grow max-w-md">
           <Input
             type="text"
-            placeholder="Search by family name or unification number..."
+            placeholder={t('families.search')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
-            aria-label="Search families"
+            aria-label={t('families.search')}
           />
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         </div>
         <Button variant="outline" onClick={() => setSearchTerm('')} className="hidden sm:flex">
-          Clear Search
+          {t('families.clearSearch')}
         </Button>
       </div>
       
@@ -164,7 +167,7 @@ const FamiliesDirectory = () => {
       {/* Pagination */}
       <div className="flex justify-between items-center mt-6 flex-wrap gap-4">
         <p className="text-sm text-muted-foreground">
-          Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredFamilies.length)} of {filteredFamilies.length} families
+          {t('families.showing')} {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredFamilies.length)} {t('families.of')} {filteredFamilies.length} {t('families.families')}
         </p>
         
         <div className="flex items-center space-x-2">
@@ -173,14 +176,14 @@ const FamiliesDirectory = () => {
             size="sm"
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            aria-label="Previous page"
+            aria-label={t('families.previousPage')}
           >
             <ChevronLeft className="h-4 w-4" />
-            <span className="sr-only">Previous page</span>
+            <span className="sr-only">{t('families.previousPage')}</span>
           </Button>
           
           <div className="text-sm font-medium">
-            Page {currentPage} of {totalPages || 1}
+            {t('families.page')} {currentPage} {t('families.of')} {totalPages || 1}
           </div>
           
           <Button
@@ -188,10 +191,10 @@ const FamiliesDirectory = () => {
             size="sm"
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages || totalPages === 0}
-            aria-label="Next page"
+            aria-label={t('families.nextPage')}
           >
             <ChevronRight className="h-4 w-4" />
-            <span className="sr-only">Next page</span>
+            <span className="sr-only">{t('families.nextPage')}</span>
           </Button>
         </div>
       </div>

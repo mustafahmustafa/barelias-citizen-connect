@@ -123,5 +123,25 @@
     "readMore": "Read More",
     "viewAll": "View All",
     "required": "required"
+  },
+  "families": {
+    "directory": "Families Directory",
+    "subtitle": "View and search all registered families in the Municipality of Bar Elias",
+    "search": "Search by family name or unification number...",
+    "clearSearch": "Clear Search",
+    "showing": "Showing",
+    "of": "of",
+    "families": "families",
+    "familyRegistry": "Family Registry",
+    "home": "Home",
+    "services": "Services",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "page": "Page",
+    "address": "Address",
+    "headOfHousehold": "Head of Household",
+    "familyMembers": "Family Members",
+    "memberName": "Name",
+    "memberAge": "Age"
   }
 }

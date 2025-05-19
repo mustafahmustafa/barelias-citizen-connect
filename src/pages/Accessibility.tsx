@@ -2,19 +2,22 @@ import React from 'react';
 import { Accessibility, Mail, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
+import { useTranslation } from 'react-i18next';
 
 const AccessibilityPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-primary text-white py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-4">Accessibility Statement</h1>
+            <h1 className="text-4xl font-bold mb-4">{t('accessibility.title')}</h1>
             <p className="text-xl opacity-90">
-              Our commitment to digital inclusion
+              {t('accessibility.subtitle')}
             </p>
-            <p className="text-sm mt-4">Last updated: May 18, 2025</p>
+            <p className="text-sm mt-4">{t('accessibility.lastUpdated')}: May 18, 2025</p>
           </div>
         </div>
       </section>
@@ -25,19 +28,17 @@ const AccessibilityPage = () => {
           <div className="bg-white rounded-lg shadow-md p-8">
             <div className="prose max-w-none">
               <p className="text-lg mb-6">
-                The Municipality of Bar Elias is committed to ensuring that our website is accessible to everyone, including people with disabilities. 
-                We strive to adhere to international best practices and Lebanese accessibility laws to provide an inclusive online experience.
+                {t('accessibility.intro')}
               </p>
               
               <div className="bg-primary/10 rounded-lg p-4 mb-8">
-                <h2 className="text-xl font-semibold mb-2 text-primary">Try Our Accessibility Tool</h2>
-                <p>Click the "A" button in the bottom right corner of your screen to access our accessibility tool. 
-                You can adjust text size, contrast, and other settings to make this website more accessible to your needs.</p>
+                <h2 className="text-xl font-semibold mb-2 text-primary">{t('accessibility.tool.title')}</h2>
+                <p>{t('accessibility.tool.description')}</p>
               </div>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                1. Commitment to Accessibility
+                1. {t('accessibility.commitment')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -55,7 +56,7 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                2. Measures to Support Accessibility
+                2. {t('accessibility.measures')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -75,7 +76,7 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                3. Known Limitations & Workarounds
+                3. {t('accessibility.limitations')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -90,7 +91,7 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                4. Compatibility with Browsers & Assistive Technologies
+                4. {t('accessibility.compatibility')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -113,7 +114,7 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                5. Ongoing Accessibility Efforts
+                5. {t('accessibility.efforts')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -126,7 +127,7 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Mail className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                6. Feedback & Contact Information
+                6. {t('accessibility.feedback')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
@@ -149,12 +150,12 @@ const AccessibilityPage = () => {
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 flex items-center">
                 <Accessibility className="mr-2 h-6 w-6 text-primary" aria-hidden="true" />
-                7. Review & Updates
+                7. {t('accessibility.review')}
               </h2>
               <Separator className="my-4" />
               <div className="ml-8">
                 <p>This statement is reviewed annually or upon significant site changes. The "Last updated" date above reflects our most recent review.</p>
-                <p className="mt-4">Thank you for helping us make the Municipality of Bar Elias website accessible to all!</p>
+                <p className="mt-4">{t('accessibility.thankyou')}</p>
               </div>
             </div>
           </div>

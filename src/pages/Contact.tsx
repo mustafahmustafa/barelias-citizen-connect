@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,9 +6,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,9 +31,9 @@ const Contact = () => {
       <section className="bg-primary text-white py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl font-bold mb-6">{t('contact.title')}</h1>
             <p className="text-xl opacity-90">
-              Get in touch with the Municipality of Bar Elias. We're here to assist you with any questions, concerns, or feedback.
+              {t('contact.subtitle')}
             </p>
           </div>
         </div>
@@ -44,35 +45,35 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('contact.form.title')}</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name <span className="text-red-500">*</span></Label>
-                    <Input id="name" placeholder="Enter your full name" required />
+                    <Label htmlFor="name">{t('contact.form.fullName')} <span className="text-red-500">*</span></Label>
+                    <Input id="name" placeholder={t('contact.form.fullName')} required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-                    <Input id="email" type="email" placeholder="Enter your email" required />
+                    <Label htmlFor="email">{t('contact.form.email')} <span className="text-red-500">*</span></Label>
+                    <Input id="email" type="email" placeholder={t('contact.form.email')} required />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" placeholder="Enter your phone number (optional)" />
+                  <Label htmlFor="phone">{t('contact.form.phone')}</Label>
+                  <Input id="phone" placeholder={t('contact.form.phoneOptional')} />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject <span className="text-red-500">*</span></Label>
-                  <Input id="subject" placeholder="Enter message subject" required />
+                  <Label htmlFor="subject">{t('contact.form.subject')} <span className="text-red-500">*</span></Label>
+                  <Input id="subject" placeholder={t('contact.form.subject')} required />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message <span className="text-red-500">*</span></Label>
+                  <Label htmlFor="message">{t('contact.form.message')} <span className="text-red-500">*</span></Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Please describe your inquiry or concern..." 
+                    placeholder={t('contact.form.messagePlaceholder')} 
                     className="min-h-[150px]"
                     required 
                   />
@@ -80,14 +81,14 @@ const Contact = () => {
                 
                 <Button type="submit" className="w-full sm:w-auto">
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {t('contact.form.send')}
                 </Button>
               </form>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h2>
               
               <div className="space-y-6">
                 <Card className="p-5">
@@ -98,7 +99,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-medium mb-1">Address</h3>
+                      <h3 className="font-medium mb-1">{t('contact.info.address')}</h3>
                       <address className="not-italic text-muted-foreground">
                         Municipal Building<br />
                         Main Street<br />
@@ -117,7 +118,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-medium mb-1">Phone Numbers</h3>
+                      <h3 className="font-medium mb-1">{t('contact.info.phones')}</h3>
                       <div className="space-y-1 text-muted-foreground">
                         <p>Main Office: +961 (0)8 123 456</p>
                         <p>Services Department: +961 (0)8 123 457</p>
@@ -135,7 +136,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-medium mb-1">Email Addresses</h3>
+                      <h3 className="font-medium mb-1">{t('contact.info.emails')}</h3>
                       <div className="space-y-1 text-muted-foreground">
                         <p>General Inquiries: info@barelias-municipality.gov.lb</p>
                         <p>Services: services@barelias-municipality.gov.lb</p>
@@ -153,19 +154,19 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-medium mb-1">Office Hours</h3>
+                      <h3 className="font-medium mb-1">{t('contact.info.hours')}</h3>
                       <div className="space-y-1 text-muted-foreground">
                         <div className="flex justify-between">
-                          <span>Monday - Thursday:</span>
+                          <span>{t('contact.info.weekdays')}:</span>
                           <span>8:00 AM - 4:30 PM</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Friday:</span>
+                          <span>{t('contact.info.friday')}:</span>
                           <span>8:00 AM - 2:00 PM</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Saturday - Sunday:</span>
-                          <span>Closed</span>
+                          <span>{t('contact.info.weekend')}:</span>
+                          <span>{t('contact.info.closed')}</span>
                         </div>
                       </div>
                     </div>
@@ -180,7 +181,7 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-12 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Find Us</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">{t('contact.map')}</h2>
           <div className="bg-white p-4 rounded-lg shadow-md">
             <div className="aspect-video rounded overflow-hidden">
               <iframe 
@@ -201,7 +202,7 @@ const Contact = () => {
       {/* Departments Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <h2 className="text-2xl font-semibold mb-12 text-center">Key Departments</h2>
+          <h2 className="text-2xl font-semibold mb-12 text-center">{t('contact.departments.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6 card-hover">

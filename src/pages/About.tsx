@@ -1,19 +1,20 @@
-
 import React from 'react';
 import { Building, Users, Target, History, Award, MapPin, Map } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-primary text-white py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-6">About Bar Elias Municipality</h1>
+            <h1 className="text-4xl font-bold mb-6">{t('about.title')}</h1>
             <p className="text-xl opacity-90">
-              The Municipality of Bar Elias is dedicated to serving our community and creating a thriving, 
-              sustainable environment for all residents and visitors of our beautiful town in the Bekaa Valley.
+              {t('about.subtitle')}
             </p>
           </div>
         </div>
@@ -26,21 +27,17 @@ const About = () => {
             <div>
               <div className="inline-flex items-center py-1 px-3 bg-primary-light text-primary rounded-full text-sm font-medium mb-4">
                 <History size={16} className="mr-2" />
-                <span>Our History</span>
+                <span>{t('about.history.title')}</span>
               </div>
-              <h2 className="text-3xl font-semibold mb-4">A Rich Heritage of Community Service</h2>
+              <h2 className="text-3xl font-semibold mb-4">{t('about.history.heading')}</h2>
               <p className="mb-4 text-lg">
-                Since its establishment, Bar Elias Municipality has been at the heart of local governance and community development.
+                {t('about.history.intro')}
               </p>
               <p className="mb-4 text-muted-foreground">
-                Founded in 1962, the municipality has grown from a small administrative body to a comprehensive 
-                local government organization providing a wide range of services to our growing population. Throughout 
-                our history, we have remained committed to transparency, efficiency, and public service.
+                {t('about.history.paragraph1')}
               </p>
               <p className="text-muted-foreground">
-                Over the decades, we have witnessed significant growth and transformation in our town, adapting our 
-                services and infrastructure to meet the evolving needs of our community while preserving our cultural 
-                heritage and natural resources.
+                {t('about.history.paragraph2')}
               </p>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-lg h-96">
@@ -58,9 +55,9 @@ const About = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-semibold mb-4">Our Mission & Vision</h2>
+            <h2 className="text-3xl font-semibold mb-4">{t('about.mission.title')}</h2>
             <p className="text-muted-foreground">
-              Guiding principles that drive our work and shape our future
+              {t('about.mission.subtitle')}
             </p>
           </div>
           
@@ -69,12 +66,9 @@ const About = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-6">
                 <Target size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-semibold mb-4">{t('about.mission.mission')}</h3>
               <p className="text-muted-foreground">
-                To provide high-quality municipal services that enhance the quality of life for all residents 
-                through effective governance, infrastructure development, and community engagement. We are committed 
-                to fiscal responsibility, environmental sustainability, and inclusive growth that preserves our 
-                town's unique character and cultural heritage.
+                {t('about.mission.missionText')}
               </p>
             </Card>
             
@@ -82,12 +76,9 @@ const About = () => {
               <div className="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center text-secondary mb-6">
                 <Award size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-semibold mb-4">{t('about.mission.vision')}</h3>
               <p className="text-muted-foreground">
-                To transform Bar Elias into a model town that balances urban development with environmental conservation, 
-                creating a sustainable community where citizens enjoy a high quality of life, robust economic opportunities, 
-                and a strong sense of social cohesion. We envision Bar Elias as a regional leader in innovative municipal 
-                governance and civic engagement.
+                {t('about.mission.visionText')}
               </p>
             </Card>
           </div>
@@ -100,11 +91,11 @@ const About = () => {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center py-1 px-3 bg-primary-light text-primary rounded-full text-sm font-medium mb-4">
               <Users size={16} className="mr-2" />
-              <span>Organizational Chart</span>
+              <span>{t('about.structure.title')}</span>
             </div>
-            <h2 className="text-3xl font-semibold mb-4">Municipal Structure</h2>
+            <h2 className="text-3xl font-semibold mb-4">{t('about.structure.heading')}</h2>
             <p className="text-muted-foreground">
-              Our municipal government is structured to effectively serve the needs of our community
+              {t('about.structure.subtitle')}
             </p>
           </div>
           
@@ -208,11 +199,11 @@ const About = () => {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center py-1 px-3 bg-primary-light text-primary rounded-full text-sm font-medium mb-4">
               <MapPin size={16} className="mr-2" />
-              <span>Our Location</span>
+              <span>{t('about.location.title')}</span>
             </div>
-            <h2 className="text-3xl font-semibold mb-4">Administrative Boundaries</h2>
+            <h2 className="text-3xl font-semibold mb-4">{t('about.location.heading')}</h2>
             <p className="text-muted-foreground">
-              Bar Elias is located in the fertile Bekaa Valley, serving numerous villages and communities in the region
+              {t('about.location.subtitle')}
             </p>
           </div>
           

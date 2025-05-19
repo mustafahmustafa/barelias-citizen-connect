@@ -123,5 +123,25 @@
     "readMore": "قراءة المزيد",
     "viewAll": "عرض الكل",
     "required": "مطلوب"
+  },
+  "families": {
+    "directory": "دليل العائلات",
+    "subtitle": "عرض وبحث جميع العائلات المسجلة في بلدية بر الياس",
+    "search": "البحث باسم العائلة أو رقم التوحيد...",
+    "clearSearch": "مسح البحث",
+    "showing": "عرض",
+    "of": "من",
+    "families": "عائلة",
+    "familyRegistry": "سجل العائلات",
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "previousPage": "الصفحة السابقة",
+    "nextPage": "الصفحة التالية",
+    "page": "صفحة",
+    "address": "العنوان",
+    "headOfHousehold": "رب الأسرة",
+    "familyMembers": "أفراد العائلة",
+    "memberName": "الاسم",
+    "memberAge": "العمر"
   }
 }
