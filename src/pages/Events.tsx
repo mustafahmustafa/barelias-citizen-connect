@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent, Image } from 'lucide-react';
 import { format } from 'date-fns';
 import { 
   Card, 
@@ -29,7 +30,8 @@ const allEvents = [
     time: "6:00 PM - 8:00 PM",
     location: "Municipal Building, Main Hall",
     category: "Municipal",
-    description: "Monthly town hall meeting to discuss current issues and upcoming initiatives. All citizens are welcome to attend and participate."
+    description: "Monthly town hall meeting to discuss current issues and upcoming initiatives. All citizens are welcome to attend and participate.",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 2,
@@ -38,7 +40,8 @@ const allEvents = [
     time: "9:00 AM - 12:00 PM",
     location: "Central Square",
     category: "Community",
-    description: "Join us for a community-wide clean-up effort. Volunteers will help collect litter, plant flowers, and beautify public spaces."
+    description: "Join us for a community-wide clean-up effort. Volunteers will help collect litter, plant flowers, and beautify public spaces.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 3,
@@ -47,7 +50,8 @@ const allEvents = [
     time: "5:30 PM - 7:00 PM",
     location: "Community Center",
     category: "Cultural",
-    description: "Planning meeting for the annual summer festival. Committee members will discuss event logistics, activities, and vendor applications."
+    description: "Planning meeting for the annual summer festival. Committee members will discuss event logistics, activities, and vendor applications.",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 4,
@@ -56,7 +60,8 @@ const allEvents = [
     time: "7:00 PM - 9:00 PM",
     location: "Municipal Building, Conference Room A",
     category: "Infrastructure",
-    description: "Public forum to discuss upcoming infrastructure projects, including road repairs, public lighting, and water system upgrades."
+    description: "Public forum to discuss upcoming infrastructure projects, including road repairs, public lighting, and water system upgrades.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 5,
@@ -65,7 +70,8 @@ const allEvents = [
     time: "10:00 AM - 4:00 PM",
     location: "Community Sports Field",
     category: "Sports",
-    description: "Annual youth sports tournament featuring soccer, basketball, and volleyball competitions for different age groups."
+    description: "Annual youth sports tournament featuring soccer, basketball, and volleyball competitions for different age groups.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 6,
@@ -74,7 +80,8 @@ const allEvents = [
     time: "2:00 PM - 4:00 PM",
     location: "Senior Center",
     category: "Community",
-    description: "Monthly social gathering for senior citizens featuring music, refreshments, and social activities."
+    description: "Monthly social gathering for senior citizens featuring music, refreshments, and social activities.",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 7,
@@ -83,7 +90,8 @@ const allEvents = [
     time: "4:00 PM - 5:30 PM",
     location: "Community Library",
     category: "Environment",
-    description: "Educational workshop on sustainable practices and environmental conservation for residents of all ages."
+    description: "Educational workshop on sustainable practices and environmental conservation for residents of all ages.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 8,
@@ -92,7 +100,8 @@ const allEvents = [
     time: "11:00 AM - 1:00 PM",
     location: "Chamber of Commerce",
     category: "Business",
-    description: "Meeting for local business owners to discuss economic development initiatives and networking opportunities."
+    description: "Meeting for local business owners to discuss economic development initiatives and networking opportunities.",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 9,
@@ -101,7 +110,8 @@ const allEvents = [
     time: "6:30 PM - 8:00 PM",
     location: "Community Center",
     category: "Health",
-    description: "Informational seminar on public health issues, vaccinations, and available health services in the community."
+    description: "Informational seminar on public health issues, vaccinations, and available health services in the community.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 10,
@@ -110,7 +120,8 @@ const allEvents = [
     time: "5:00 PM - 8:00 PM",
     location: "Municipal Cultural Center",
     category: "Education",
-    description: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will include speeches, diploma presentations, and a reception for graduates and their families."
+    description: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will include speeches, diploma presentations, and a reception for graduates and their families.",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 11,
@@ -119,7 +130,8 @@ const allEvents = [
     time: "4:00 PM - 6:00 PM",
     location: "Bar Elias Municipal Stadium",
     category: "Sports",
-    description: "Come support your local teams in this exciting football match between Al Nahda and Naser Club. Refreshments will be available, and tickets can be purchased at the stadium entrance."
+    description: "Come support your local teams in this exciting football match between Al Nahda and Naser Club. Refreshments will be available, and tickets can be purchased at the stadium entrance.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -239,16 +251,27 @@ const Events = () => {
                     <Card key={event.id} className="card-hover">
                       <CardContent className="p-6">
                         <div className="flex flex-col md:flex-row gap-6">
-                          <div className="bg-primary/10 rounded p-4 text-center min-w-[100px]">
-                            <div className="text-sm text-primary font-medium">
-                              {format(event.date, 'MMM')}
+                          <div className="md:flex md:flex-col">
+                            <div className="bg-primary/10 rounded p-4 text-center min-w-[100px]">
+                              <div className="text-sm text-primary font-medium">
+                                {format(event.date, 'MMM')}
+                              </div>
+                              <div className="text-3xl font-bold text-primary">
+                                {format(event.date, 'd')}
+                              </div>
+                              <div className="text-sm text-primary font-medium">
+                                {format(event.date, 'yyyy')}
+                              </div>
                             </div>
-                            <div className="text-3xl font-bold text-primary">
-                              {format(event.date, 'd')}
-                            </div>
-                            <div className="text-sm text-primary font-medium">
-                              {format(event.date, 'yyyy')}
-                            </div>
+                            {event.image && (
+                              <div className="mt-4 rounded overflow-hidden h-32 w-32 hidden md:block">
+                                <img 
+                                  src={event.image} 
+                                  alt={event.title} 
+                                  className="h-full w-full object-cover"
+                                />
+                              </div>
+                            )}
                           </div>
                           
                           <div className="flex-grow">
@@ -258,6 +281,17 @@ const Events = () => {
                               </Badge>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+                            
+                            {event.image && (
+                              <div className="mb-4 rounded overflow-hidden h-40 md:hidden">
+                                <img 
+                                  src={event.image} 
+                                  alt={event.title} 
+                                  className="h-full w-full object-cover"
+                                />
+                              </div>
+                            )}
+                            
                             <p className="text-muted-foreground mb-4">{event.description}</p>
                             <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-muted-foreground">
                               <div className="flex items-center">
