@@ -100,7 +100,7 @@ export const translations = {
     lastName: "Last Name",
     email: "Email",
     phone: "Phone Number",
-    addressForm: "Address",
+    addressForm: "Address", // Changed from "address" to "addressForm" to resolve the duplicate key
     areasInterest: "Areas of Interest",
     availability: "Availability",
     prevExperience: "Previous Volunteer Experience (Optional)",
@@ -124,7 +124,7 @@ export const translations = {
     optional: "optional",
     sendMessageBtn: "Send Message",
     contactInfoTitle: "Contact Information",
-    addressLabel: "Address",
+    addressLabel: "Address", // Changed from "address" to "addressLabel" to resolve the duplicate key
     municipalBuilding: "Municipal Building",
     mainStreet: "Main Street",
     barEliasLocation: "Bar Elias, Bekaa Valley",
@@ -157,7 +157,7 @@ export const translations = {
     
     // Services Page
     municipalServicesTitle: "Municipal Services",
-    exploreServicesDesc: "Explore the services offered by the Municipality of Bar Elias",
+    exploreServicesDesc: "Explore the services offered by the Municipality of Bar Elias", // Changed from "exploreServices" to "exploreServicesDesc" to resolve the duplicate key
     administrativeServicesTitle: "Administrative Services",
     administrativeServicesDescription: "Official documents and municipal permits",
     businessServicesTitle: "Business Services",
@@ -420,7 +420,7 @@ export const translations = {
     lastName: "اسم العائلة",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
-    addressField: "العنوان",
+    addressField: "العنوان", // Changed from "address" to "addressField" to resolve the duplicate key
     areasInterest: "مجالات الاهتمام",
     availability: "التوفر",
     prevExperience: "خبرة التطوع السابقة (اختياري)",
@@ -444,7 +444,7 @@ export const translations = {
     optional: "اختياري",
     sendMessageBtn: "إرسال الرسالة",
     contactInfoTitle: "معلومات الاتصال",
-    addressLocation: "العنوان",
+    addressLocation: "العنوان", // Changed from "address" to "addressLocation" to resolve the duplicate key
     municipalBuilding: "مبنى البلدية",
     mainStreet: "الشارع الرئيسي",
     barEliasLocation: "برا إلياس، سهل البقاع",
@@ -477,7 +477,7 @@ export const translations = {
     
     // صفحة الخدمات - Services Page
     municipalServicesTitle: "الخدمات البلدية",
-    exploreServicesDesc: "استكشف الخدمات التي تقدمها بلدية برا إلياس",
+    exploreServicesDesc: "استكشف الخدمات التي تقدمها بلدية برا إلياس", // Changed from "exploreServices" to "exploreServicesDesc" to resolve the duplicate key
     administrativeServicesTitle: "الخدمات الإدارية",
     administrativeServicesDescription: "الوثائق الرسمية والتصاريح البلدية",
     businessServicesTitle: "خدمات الأعمال",
