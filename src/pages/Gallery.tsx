@@ -8,44 +8,44 @@ const mediaGallery = [
   {
     id: 1,
     type: "image",
+    location: "Bar Elias",
+    title: "Public Garden",
+    thumbnail: "/lovable-uploads/d9ee6bd0-56d6-4849-b8dc-f31860d00ae5.png"
+  },
+  {
+    id: 2,
+    type: "image",
+    location: "Bar Elias",
+    title: "Municipal Hospital",
+    thumbnail: "/lovable-uploads/defc9481-6868-4602-881b-86983fbaf101.png"
+  },
+  {
+    id: 3,
+    type: "image",
     location: "Madinah",
     title: "Town Center Renovation Project",
     thumbnail: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
-    id: 2,
+    id: 4,
     type: "image",
-    location: "Riyadh",
+    location: "Riyadah",
     title: "New Municipal Building Opening",
     thumbnail: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
-    id: 3,
+    id: 5,
     type: "image",
     location: "Jeddah",
     title: "Infrastructure Improvement Works",
     thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
-    id: 4,
+    id: 6,
     type: "image",
     location: "Abha",
     title: "Public Parks and Green Spaces",
     thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: 5,
-    type: "video",
-    location: "Riyadh",
-    title: "Town Hall Meeting Highlights",
-    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: 6,
-    type: "image",
-    location: "Aseer",
-    title: "Community Festival",
-    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 7,
