@@ -420,7 +420,7 @@ export const translations = {
     lastName: "اسم العائلة",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
-    addressField: "العنوان",
+    addressField: "العنوان", // Renamed from address to addressField
     areasInterest: "مجالات الاهتمام",
     availability: "التوفر",
     prevExperience: "خبرة التطوع السابقة (اختياري)",
@@ -444,7 +444,7 @@ export const translations = {
     optional: "اختياري",
     sendMessageBtn: "إرسال الرسالة",
     contactInfoTitle: "معلومات الاتصال",
-    addressLocation: "العنوان",
+    addressLocation: "العنوان", // Renamed from address to addressLocation
     municipalBuilding: "مبنى البلدية",
     mainStreet: "الشارع الرئيسي",
     barEliasLocation: "برا إلياس، سهل البقاع",
