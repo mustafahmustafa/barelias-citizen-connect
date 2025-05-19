@@ -20,6 +20,7 @@ import Volunteer from "./pages/Volunteer";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
+import FamiliesDirectory from "./pages/FamiliesDirectory";
 import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/families" element={<FamiliesDirectory />} />
               <Route path="/news" element={<News />} />
               <Route path="/events" element={<Events />} />
               <Route path="/report" element={<Report />} />
