@@ -6,7 +6,35 @@ import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Service items that need translation
+  const serviceItems = [
+    { key: 'utilities', en: 'Utilities Bills', ar: 'فواتير المرافق' },
+    { key: 'permits', en: 'Permits & Licenses', ar: 'التصاريح والتراخيص' },
+    { key: 'infrastructure', en: 'Infrastructure', ar: 'البنية التحتية' },
+    { key: 'community', en: 'Community Programs', ar: 'البرامج المجتمعية' },
+    { key: 'business', en: 'Business Services', ar: 'خدمات الأعمال' }
+  ];
+
+  // Bottom footer links that need translation
+  const bottomLinks = [
+    { key: 'privacy', en: 'Privacy Policy', ar: 'سياسة الخصوصية', path: '/privacy' },
+    { key: 'terms', en: 'Terms of Use', ar: 'شروط الاستخدام', path: '/terms' },
+    { key: 'accessibility', en: 'Accessibility', ar: 'إمكانية الوصول', path: '/accessibility' }
+  ];
+
+  // Contact info that needs translation
+  const contactInfo = {
+    address: {
+      en: 'Municipal Building, Main Street, Bar Elias, Bekaa Valley, Lebanon',
+      ar: 'مبنى البلدية، الشارع الرئيسي، بر الياس، وادي البقاع، لبنان'
+    },
+    phone: '+961 (0)8 123 456',
+    email: 'info@barelias-municipality.gov.lb'
+  };
+
+  const isArabic = i18n.language === 'ar';
 
   return (
     <footer className="bg-[#1a2942] text-white">
@@ -14,16 +42,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Column */}
           <div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2" style={{ flexDirection: isArabic ? 'row-reverse' : 'row' }}>
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                 <span className="text-primary font-bold text-sm">BE</span>
               </div>
-              <h3 className="font-montserrat font-bold text-xl">Bar Elias</h3>
+              <h3 className="font-montserrat font-bold text-xl">
+                {isArabic ? 'بر الياس' : 'Bar Elias'}
+              </h3>
             </div>
             <p className="text-gray-300 mb-4">
               {t('footer.about')}
             </p>
-            <div className="flex space-x-3">
+            <div className={`flex ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
               <a href="https://facebook.com" className="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Facebook size={18} />
                 <span className="sr-only">Facebook</span>
@@ -85,31 +115,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-5">{t('footer.ourServices')}</h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Utilities Bills
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Permits & Licenses
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Infrastructure
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Community Programs
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Business Services
-                </Link>
-              </li>
+              {serviceItems.map((service) => (
+                <li key={service.key}>
+                  <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                    {isArabic ? service.ar : service.en}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
@@ -117,19 +129,19 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-5">{t('footer.contactInfo')}</h3>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin size={20} className="shrink-0 text-gray-300 mt-1" />
+              <li className={`flex items-start ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
+                <MapPin size={20} className={`shrink-0 text-gray-300 mt-1 ${isArabic ? 'ml-3' : 'mr-0'}`} />
                 <span className="text-gray-300">
-                  Municipal Building, Main Street, Bar Elias, Bekaa Valley, Lebanon
+                  {isArabic ? contactInfo.address.ar : contactInfo.address.en}
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={20} className="shrink-0 text-gray-300" />
-                <span className="text-gray-300">+961 (0)8 123 456</span>
+              <li className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
+                <Phone size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'ml-3' : 'mr-0'}`} />
+                <span className="text-gray-300">{contactInfo.phone}</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={20} className="shrink-0 text-gray-300" />
-                <span className="text-gray-300">info@barelias-municipality.gov.lb</span>
+              <li className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
+                <Mail size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'ml-3' : 'mr-0'}`} />
+                <span className="text-gray-300">{contactInfo.email}</span>
               </li>
             </ul>
           </div>
@@ -139,12 +151,18 @@ const Footer = () => {
         <div className="pt-6 border-t border-gray-700">
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Municipality of Bar Elias. {t('footer.rights')}
+              © {currentYear} {isArabic ? 'بلدية بر الياس.' : 'Municipality of Bar Elias.'} {t('footer.rights')}
             </p>
-            <div className="flex space-x-4 text-sm text-gray-400">
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-              <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
+            <div className={`flex ${isArabic ? 'space-x-reverse' : 'space-x-4'} text-sm text-gray-400`}>
+              {bottomLinks.map((link) => (
+                <Link 
+                  key={link.key}
+                  to={link.path} 
+                  className="hover:text-white transition-colors"
+                >
+                  {isArabic ? link.ar : link.en}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
