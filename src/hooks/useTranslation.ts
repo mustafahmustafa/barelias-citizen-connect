@@ -8,21 +8,26 @@ export const useTranslation = () => {
   const t = (key: string) => {
     // Split by dots for nested keys
     const keys = key.split('.');
-    let translation = translations[language];
+    let translation: any = translations[language];
     
     // Navigate through nested objects if needed
     for (const k of keys) {
-      if (translation && k in translation) {
+      if (translation && typeof translation === 'object' && k in translation) {
         translation = translation[k];
       } else {
-        // Fallback to English or return the key itself
-        const englishTranslation = translations['en'];
-        for (const ek of keys) {
-          if (englishTranslation && ek in englishTranslation) {
-            return englishTranslation[ek];
+        // If key doesn't exist in current language, try English as fallback
+        if (language !== 'en') {
+          let englishTranslation: any = translations['en'];
+          for (const ek of keys) {
+            if (englishTranslation && typeof englishTranslation === 'object' && ek in englishTranslation) {
+              englishTranslation = englishTranslation[ek];
+            } else {
+              return key; // If not found in English either, return the key itself
+            }
           }
+          return englishTranslation;
         }
-        return key;
+        return key; // If not found and already in English, return the key itself
       }
     }
     

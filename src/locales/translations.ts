@@ -50,6 +50,25 @@ export const translations = {
     apply: "Apply",
     submit: "Submit",
     cancel: "Cancel",
+    
+    // Homepage Sections
+    quickAccess: "Quick Access",
+    aboutBarElias: "About Bar Elias Municipality",
+    aboutText: "The Municipality of Bar Elias is dedicated to providing high-quality public services and fostering community development to enhance the quality of life for all residents.",
+    aboutDescription: "Located in the beautiful Bekaa Valley, Bar Elias is a thriving town with rich history and culture. Our municipal administration works tirelessly to implement infrastructure projects, maintain public facilities, and create a sustainable environment for future generations.",
+    municipalBuilding: "Municipal Building",
+    
+    // Volunteer Section
+    becomeVolunteer: "Become a Volunteer",
+    volunteerText: "Join our community projects and make a difference in Bar Elias",
+    registerVolunteer: "Register as Volunteer",
+    viewProjects: "View Projects",
+    
+    // Emergency Section
+    needAssistance: "Need Immediate Assistance?",
+    emergencyAvailable: "Our emergency services are available 24/7",
+    emergencyContacts: "Emergency Contacts",
+    callHotline: "Call Hotline"
   },
   ar: {
     // Header
@@ -101,5 +120,24 @@ export const translations = {
     apply: "تقديم طلب",
     submit: "إرسال",
     cancel: "إلغاء",
+    
+    // Homepage Sections
+    quickAccess: "وصول سريع",
+    aboutBarElias: "حول بلدية بر إلياس",
+    aboutText: "تكرس بلدية بر إلياس جهودها لتوفير خدمات عامة عالية الجودة وتعزيز تنمية المجتمع لتحسين نوعية الحياة لجميع السكان.",
+    aboutDescription: "تقع بلدة بر إلياس في وادي البقاع الجميل، وهي بلدة مزدهرة ذات تاريخ وثقافة غنية. تعمل إدارتنا البلدية بلا كلل على تنفيذ مشاريع البنية التحتية وصيانة المرافق العامة وخلق بيئة مستدامة للأجيال القادمة.",
+    municipalBuilding: "مبنى البلدية",
+    
+    // Volunteer Section
+    becomeVolunteer: "كن متطوعًا",
+    volunteerText: "انضم إلى مشاريع مجتمعنا واصنع فرقًا في بر إلياس",
+    registerVolunteer: "سجل كمتطوع",
+    viewProjects: "عرض المشاريع",
+    
+    // Emergency Section
+    needAssistance: "هل تحتاج إلى مساعدة فورية؟",
+    emergencyAvailable: "خدمات الطوارئ لدينا متاحة على مدار الساعة",
+    emergencyContacts: "جهات اتصال الطوارئ",
+    callHotline: "اتصل بالخط الساخن"
   }
 };

@@ -11,7 +11,7 @@ const LanguageSwitcher = () => {
     <Button 
       variant="outline" 
       size="icon" 
-      className="rounded-full" 
+      className={`rounded-full ${language === 'ar' ? 'font-arabic' : ''}`}
       onClick={toggleLanguage}
       aria-label={`Switch to ${language === 'en' ? 'Arabic' : 'English'}`}
     >
