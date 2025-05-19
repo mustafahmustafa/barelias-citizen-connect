@@ -23,13 +23,22 @@ export const resources = {
     translation: {
       navbar: {
         home: 'الرئيسية',
-        about: 'من نحن',
+        about: 'حول',
         services: 'الخدمات',
         news: 'الأخبار',
         events: 'الفعاليات',
-        report: 'بلّغ',
+        report: 'الإبلاغ',
         contact: 'اتصل بنا'
       },
+      footer: {
+        about: 'الموقع الرسمي لبلدية برا إلياس، نخدم مواطنينا وزوارنا بالخدمات البلدية والأخبار والموارد المجتمعية.',
+        quickLinks: 'روابط سريعة',
+        ourServices: 'خدماتنا',
+        contactInfo: 'معلومات الاتصال',
+        rights: 'جميع الحقوق محفوظة'
+      },
+      emergency: 'جهات الاتصال الطارئة',
+      search: 'بحث'
       // Other translations defined in the JSON files
     }
   }
