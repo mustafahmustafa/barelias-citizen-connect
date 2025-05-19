@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     // Header
@@ -442,7 +441,6 @@ export const translations = {
     lastName: "اسم العائلة",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
-    address: "العنوان",
     areasInterest: "مجالات الاهتمام",
     availability: "التوفر",
     prevExperience: "خبرة التطوع السابقة (اختياري)",
@@ -482,4 +480,3 @@ export const translations = {
     legalOffice: "مكتب الشؤون القانونية"
   }
 };
-
