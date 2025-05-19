@@ -1,3 +1,4 @@
+
 export const translations = {
   en: {
     // Header
@@ -99,7 +100,7 @@ export const translations = {
     lastName: "Last Name",
     email: "Email",
     phone: "Phone Number",
-    address: "Address",
+    addressForm: "Address",
     areasInterest: "Areas of Interest",
     availability: "Availability",
     prevExperience: "Previous Volunteer Experience (Optional)",
@@ -156,7 +157,7 @@ export const translations = {
     
     // Services Page
     municipalServicesTitle: "Municipal Services",
-    exploreServices: "Explore the services offered by the Municipality of Bar Elias",
+    exploreServicesDesc: "Explore the services offered by the Municipality of Bar Elias",
     administrativeServicesTitle: "Administrative Services",
     administrativeServicesDescription: "Official documents and municipal permits",
     businessServicesTitle: "Business Services",
@@ -476,7 +477,7 @@ export const translations = {
     
     // صفحة الخدمات - Services Page
     municipalServicesTitle: "الخدمات البلدية",
-    exploreServices: "استكشف الخدمات التي تقدمها بلدية برا إلياس",
+    exploreServicesDesc: "استكشف الخدمات التي تقدمها بلدية برا إلياس",
     administrativeServicesTitle: "الخدمات الإدارية",
     administrativeServicesDescription: "الوثائق الرسمية والتصاريح البلدية",
     businessServicesTitle: "خدمات الأعمال",
