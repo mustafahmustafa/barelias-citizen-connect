@@ -164,6 +164,69 @@ const Events = () => {
   // Get unique event dates for the calendar
   const eventDates = allEvents.map(event => format(event.date, 'yyyy-MM-dd'));
 
+  // Function to render event cards
+  const renderEventCard = (event: any) => (
+    <Card key={event.id} className="card-hover">
+      <CardContent className="p-6">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="md:flex md:flex-col">
+            <div className="bg-primary/10 rounded p-4 text-center min-w-[100px]">
+              <div className="text-sm text-primary font-medium">
+                {format(event.date, 'MMM')}
+              </div>
+              <div className="text-3xl font-bold text-primary">
+                {format(event.date, 'd')}
+              </div>
+              <div className="text-sm text-primary font-medium">
+                {format(event.date, 'yyyy')}
+              </div>
+            </div>
+            {event.image && (
+              <div className="mt-4 rounded overflow-hidden h-32 w-32 hidden md:block">
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+          </div>
+          
+          <div className="flex-grow">
+            <div className="flex flex-wrap gap-2 mb-2">
+              <Badge className={(eventCategories as any)[event.category] || "bg-gray-500"}>
+                {event.category}
+              </Badge>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+            
+            {event.image && (
+              <div className="mb-4 rounded overflow-hidden h-40 md:hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+            
+            <p className="text-muted-foreground mb-4">{event.description}</p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-muted-foreground">
+              <div className="flex items-center">
+                <Clock size={16} className="mr-2 text-primary" />
+                <span>{event.time}</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin size={16} className="mr-2 text-primary" />
+                <span>{event.location}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+
   return (
     <div>
       {/* Hero Section */}
@@ -247,79 +310,30 @@ const Events = () => {
             <TabsContent value="list" className="mt-0">
               <div className="space-y-6">
                 {filteredEvents.length > 0 ? (
-                  filteredEvents.map((event) => (
-                    <Card key={event.id} className="card-hover">
-                      <CardContent className="p-6">
-                        <div className="flex flex-col md:flex-row gap-6">
-                          <div className="md:flex md:flex-col">
-                            <div className="bg-primary/10 rounded p-4 text-center min-w-[100px]">
-                              <div className="text-sm text-primary font-medium">
-                                {format(event.date, 'MMM')}
-                              </div>
-                              <div className="text-3xl font-bold text-primary">
-                                {format(event.date, 'd')}
-                              </div>
-                              <div className="text-sm text-primary font-medium">
-                                {format(event.date, 'yyyy')}
-                              </div>
-                            </div>
-                            {event.image && (
-                              <div className="mt-4 rounded overflow-hidden h-32 w-32 hidden md:block">
-                                <img 
-                                  src={event.image} 
-                                  alt={event.title} 
-                                  className="h-full w-full object-cover"
-                                />
-                              </div>
-                            )}
-                          </div>
-                          
-                          <div className="flex-grow">
-                            <div className="flex flex-wrap gap-2 mb-2">
-                              <Badge className={(eventCategories as any)[event.category] || "bg-gray-500"}>
-                                {event.category}
-                              </Badge>
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                            
-                            {event.image && (
-                              <div className="mb-4 rounded overflow-hidden h-40 md:hidden">
-                                <img 
-                                  src={event.image} 
-                                  alt={event.title} 
-                                  className="h-full w-full object-cover"
-                                />
-                              </div>
-                            )}
-                            
-                            <p className="text-muted-foreground mb-4">{event.description}</p>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-muted-foreground">
-                              <div className="flex items-center">
-                                <Clock size={16} className="mr-2 text-primary" />
-                                <span>{event.time}</span>
-                              </div>
-                              <div className="flex items-center">
-                                <MapPin size={16} className="mr-2 text-primary" />
-                                <span>{event.location}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))
+                  filteredEvents.map((event) => renderEventCard(event))
                 ) : (
-                  <div className="text-center py-12 bg-muted rounded-lg">
-                    <h3 className="text-xl font-medium mb-2">No events on this date</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Try selecting a different date or check back later
-                    </p>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => setDate(new Date())}
-                    >
-                      Back to Today
-                    </Button>
+                  <div>
+                    <div className="text-center py-8 bg-muted rounded-lg mb-10">
+                      <h3 className="text-xl font-medium mb-2">No events on {date ? format(date, 'MMMM d, yyyy') : 'this date'}</h3>
+                      <p className="text-muted-foreground mb-4">
+                        Here are all upcoming events
+                      </p>
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setDate(new Date())}
+                        className="mb-4"
+                      >
+                        Back to Today
+                      </Button>
+                    </div>
+                    
+                    <h3 className="text-2xl font-semibold mb-6">All Upcoming Events</h3>
+                    <div className="space-y-6">
+                      {allEvents
+                        .sort((a, b) => a.date.getTime() - b.date.getTime())
+                        .map((event) => renderEventCard(event))
+                      }
+                    </div>
                   </div>
                 )}
               </div>
