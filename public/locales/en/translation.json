@@ -17,5 +17,111 @@
     "rights": "All Rights Reserved"
   },
   "emergency": "Emergency Contact",
-  "search": "Search"
+  "search": "Search",
+  "about": {
+    "title": "About Bar Elias Municipality",
+    "subtitle": "The Municipality of Bar Elias is dedicated to serving our community and creating a thriving, sustainable environment for all residents and visitors of our beautiful town in the Bekaa Valley.",
+    "history": {
+      "title": "Our History",
+      "heading": "A Rich Heritage of Community Service",
+      "intro": "Since its establishment, Bar Elias Municipality has been at the heart of local governance and community development.",
+      "paragraph1": "Founded in 1962, the municipality has grown from a small administrative body to a comprehensive local government organization providing a wide range of services to our growing population. Throughout our history, we have remained committed to transparency, efficiency, and public service.",
+      "paragraph2": "Over the decades, we have witnessed significant growth and transformation in our town, adapting our services and infrastructure to meet the evolving needs of our community while preserving our cultural heritage and natural resources."
+    },
+    "mission": {
+      "title": "Our Mission & Vision",
+      "subtitle": "Guiding principles that drive our work and shape our future",
+      "mission": "Our Mission",
+      "missionText": "To provide high-quality municipal services that enhance the quality of life for all residents through effective governance, infrastructure development, and community engagement. We are committed to fiscal responsibility, environmental sustainability, and inclusive growth that preserves our town's unique character and cultural heritage.",
+      "vision": "Our Vision",
+      "visionText": "To transform Bar Elias into a model town that balances urban development with environmental conservation, creating a sustainable community where citizens enjoy a high quality of life, robust economic opportunities, and a strong sense of social cohesion. We envision Bar Elias as a regional leader in innovative municipal governance and civic engagement."
+    },
+    "structure": {
+      "title": "Organizational Chart",
+      "heading": "Municipal Structure",
+      "subtitle": "Our municipal government is structured to effectively serve the needs of our community"
+    },
+    "location": {
+      "title": "Our Location",
+      "heading": "Administrative Boundaries",
+      "subtitle": "Bar Elias is located in the fertile Bekaa Valley, serving numerous villages and communities in the region"
+    }
+  },
+  "services": {
+    "title": "Municipal Services",
+    "subtitle": "Explore the services offered by the Municipality of Bar Elias",
+    "categories": {
+      "administrative": {
+        "title": "Administrative Services",
+        "description": "Official documents and municipal permits"
+      },
+      "business": {
+        "title": "Business Services",
+        "description": "Licenses and permissions for commercial activities"
+      },
+      "publicWorks": {
+        "title": "Public Works",
+        "description": "Infrastructure maintenance and development"
+      },
+      "environmental": {
+        "title": "Environmental Services",
+        "description": "Waste management and environmental protection"
+      }
+    },
+    "accessService": "Access Service"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with the Municipality of Bar Elias. We're here to assist you with any questions, concerns, or feedback.",
+    "form": {
+      "title": "Send Us a Message",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "phoneOptional": "Enter your phone number (optional)",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Please describe your inquiry or concern...",
+      "send": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phones": "Phone Numbers",
+      "emails": "Email Addresses",
+      "hours": "Office Hours",
+      "weekdays": "Monday - Thursday",
+      "friday": "Friday",
+      "weekend": "Saturday - Sunday",
+      "closed": "Closed"
+    },
+    "map": "Find Us",
+    "departments": {
+      "title": "Key Departments"
+    }
+  },
+  "accessibility": {
+    "title": "Accessibility Statement",
+    "subtitle": "Our commitment to digital inclusion",
+    "lastUpdated": "Last updated",
+    "intro": "The Municipality of Bar Elias is committed to ensuring that our website is accessible to everyone, including people with disabilities. We strive to adhere to international best practices and Lebanese accessibility laws to provide an inclusive online experience.",
+    "tool": {
+      "title": "Try Our Accessibility Tool",
+      "description": "Click the \"A\" button in the bottom right corner of your screen to access our accessibility tool. You can adjust text size, contrast, and other settings to make this website more accessible to your needs."
+    },
+    "commitment": "Commitment to Accessibility",
+    "measures": "Measures to Support Accessibility",
+    "limitations": "Known Limitations & Workarounds",
+    "compatibility": "Compatibility with Browsers & Assistive Technologies",
+    "efforts": "Ongoing Accessibility Efforts",
+    "feedback": "Feedback & Contact Information",
+    "review": "Review & Updates",
+    "thankyou": "Thank you for helping us make the Municipality of Bar Elias website accessible to all!"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "required": "required"
+  }
 }
