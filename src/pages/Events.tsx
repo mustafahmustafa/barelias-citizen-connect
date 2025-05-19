@@ -111,6 +111,15 @@ const allEvents = [
     location: "Municipal Cultural Center",
     category: "Education",
     description: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will include speeches, diploma presentations, and a reception for graduates and their families."
+  },
+  {
+    id: 11,
+    title: "Football Game: Al Nahda vs Naser Club",
+    date: new Date(2025, 5, 22), // June 22, 2025
+    time: "4:00 PM - 6:00 PM",
+    location: "Bar Elias Municipal Stadium",
+    category: "Sports",
+    description: "Come support your local teams in this exciting football match between Al Nahda and Naser Club. Refreshments will be available, and tickets can be purchased at the stadium entrance."
   }
 ];
 
