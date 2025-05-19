@@ -15,10 +15,10 @@ import {
   Play,
   Film,
   Trophy,
-  Landmark,
   GraduationCap,
   UserPlus,
-  HelpingHand
+  HelpingHand,
+  Hospital
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -68,11 +68,11 @@ const latestNews = [
   },
   {
     id: 2,
-    title: "Opening of the Municipality Castle",
+    title: "Opening of the Barelias Hospital",
     date: "August 12, 2025",
-    excerpt: "The historic Bar Elias Municipality Castle will open its doors to the public after extensive renovations. Explore this architectural gem and learn about our town's rich cultural heritage.",
-    image: "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    icon: Landmark // Using Landmark icon as alternative
+    excerpt: "We are proud to announce the opening of the new Barelias Hospital, a state-of-the-art medical facility designed to provide comprehensive healthcare services to our community. This modern facility features advanced medical equipment, specialized departments, and a dedicated team of healthcare professionals.",
+    image: "/lovable-uploads/976951c3-614b-4064-8fa4-a28de2757dde.png",
+    icon: Hospital // Using Hospital icon
   },
   {
     id: 3,
