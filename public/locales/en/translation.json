@@ -1,0 +1,21 @@
+
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "events": "Events",
+    "report": "Report",
+    "contact": "Contact"
+  },
+  "footer": {
+    "about": "The official website of the Municipality of Bar Elias, serving our citizens and visitors with municipal services, news, and community resources.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactInfo": "Contact Info",
+    "rights": "All Rights Reserved"
+  },
+  "emergency": "Emergency Contact",
+  "search": "Search"
+}

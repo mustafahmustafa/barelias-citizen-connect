@@ -2,9 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, MapPin, Mail, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-[#1a2942] text-white">
@@ -19,7 +21,7 @@ const Footer = () => {
               <h3 className="font-montserrat font-bold text-xl">Bar Elias</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              The official website of the Municipality of Bar Elias, serving our citizens and visitors with municipal services, news, and community resources.
+              {t('footer.about')}
             </p>
             <div className="flex space-x-3">
               <a href="https://facebook.com" className="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -39,41 +41,41 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-5">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                  Home
+                  {t('navbar.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About
+                  {t('navbar.about')}
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Services
+                  {t('navbar.services')}
                 </Link>
               </li>
               <li>
                 <Link to="/news" className="text-gray-300 hover:text-white transition-colors">
-                  News
+                  {t('navbar.news')}
                 </Link>
               </li>
               <li>
                 <Link to="/events" className="text-gray-300 hover:text-white transition-colors">
-                  Events
+                  {t('navbar.events')}
                 </Link>
               </li>
               <li>
                 <Link to="/report" className="text-gray-300 hover:text-white transition-colors">
-                  Report
+                  {t('navbar.report')}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact
+                  {t('navbar.contact')}
                 </Link>
               </li>
             </ul>
@@ -81,7 +83,7 @@ const Footer = () => {
           
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-5">{t('footer.ourServices')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
@@ -113,7 +115,7 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">Contact Info</h3>
+            <h3 className="text-lg font-semibold mb-5">{t('footer.contactInfo')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="shrink-0 text-gray-300 mt-1" />
@@ -137,7 +139,7 @@ const Footer = () => {
         <div className="pt-6 border-t border-gray-700">
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Municipality of Bar Elias. All Rights Reserved
+              © {currentYear} Municipality of Bar Elias. {t('footer.rights')}
             </p>
             <div className="flex space-x-4 text-sm text-gray-400">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

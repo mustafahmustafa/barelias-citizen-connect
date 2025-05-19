@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +58,7 @@ const Header = () => {
             }
             end
           >
-            Home
+            {t('navbar.home')}
           </NavLink>
           <NavLink 
             to="/about" 
@@ -65,7 +68,7 @@ const Header = () => {
               }`
             }
           >
-            About
+            {t('navbar.about')}
           </NavLink>
           <NavLink 
             to="/services" 
@@ -75,7 +78,7 @@ const Header = () => {
               }`
             }
           >
-            Services
+            {t('navbar.services')}
           </NavLink>
           <NavLink 
             to="/news" 
@@ -85,7 +88,7 @@ const Header = () => {
               }`
             }
           >
-            News
+            {t('navbar.news')}
           </NavLink>
           <NavLink 
             to="/events" 
@@ -95,7 +98,7 @@ const Header = () => {
               }`
             }
           >
-            Events
+            {t('navbar.events')}
           </NavLink>
           <NavLink 
             to="/report" 
@@ -105,7 +108,7 @@ const Header = () => {
               }`
             }
           >
-            Report
+            {t('navbar.report')}
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -115,32 +118,36 @@ const Header = () => {
               }`
             }
           >
-            Contact
+            {t('navbar.contact')}
           </NavLink>
         </nav>
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center space-x-4">
+          <LanguageSwitcher />
           <Button variant="outline" size="icon" className="rounded-full">
             <Search className="h-4 w-4" />
-            <span className="sr-only">Search</span>
+            <span className="sr-only">{t('search')}</span>
           </Button>
           <Button className="bg-secondary hover:bg-secondary-hover">
-            Emergency Contact
+            {t('emergency')}
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          onClick={toggleMobileMenu} 
-          className="lg:hidden p-2 rounded-md"
-        >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6 text-primary" />
-          ) : (
-            <Menu className="h-6 w-6 text-primary" />
-          )}
-        </button>
+        <div className="lg:hidden flex items-center space-x-2">
+          <LanguageSwitcher />
+          <button 
+            onClick={toggleMobileMenu} 
+            className="p-2 rounded-md"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-primary" />
+            ) : (
+              <Menu className="h-6 w-6 text-primary" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -157,7 +164,7 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
               end
             >
-              Home
+              {t('navbar.home')}
             </NavLink>
             <NavLink 
               to="/about" 
@@ -168,7 +175,7 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              {t('navbar.about')}
             </NavLink>
             <NavLink 
               to="/services" 
@@ -179,7 +186,7 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              {t('navbar.services')}
             </NavLink>
             <NavLink 
               to="/news" 
@@ -190,7 +197,7 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              News
+              {t('navbar.news')}
             </NavLink>
             <NavLink 
               to="/events" 
@@ -201,7 +208,7 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              Events
+              {t('navbar.events')}
             </NavLink>
             <NavLink 
               to="/report" 
@@ -212,7 +219,7 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              Report
+              {t('navbar.report')}
             </NavLink>
             <NavLink 
               to="/contact" 
@@ -223,16 +230,16 @@ const Header = () => {
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('navbar.contact')}
             </NavLink>
             
             <div className="flex mt-4 space-x-2">
               <Button className="bg-secondary hover:bg-secondary-hover flex-1">
-                Emergency Contact
+                {t('emergency')}
               </Button>
               <Button variant="outline" size="icon" className="rounded-full">
                 <Search className="h-4 w-4" />
-                <span className="sr-only">Search</span>
+                <span className="sr-only">{t('search')}</span>
               </Button>
             </div>
           </div>
