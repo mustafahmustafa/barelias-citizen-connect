@@ -7,6 +7,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 
 const LanguageSwitcher = () => {
   const { language, toggleLanguage, direction } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <Button 
@@ -14,7 +15,7 @@ const LanguageSwitcher = () => {
       size="icon" 
       className={`rounded-full ${language === 'ar' ? 'font-arabic' : ''}`}
       onClick={toggleLanguage}
-      aria-label={`Switch to ${language === 'en' ? 'Arabic' : 'English'}`}
+      aria-label={language === 'en' ? 'التبديل إلى العربية' : 'Switch to English'}
       dir={direction}
     >
       <Languages className="h-4 w-4" />
