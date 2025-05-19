@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent, Image } from 'lucide-react';
-import { format } from 'date-fns';
+
+import React, { useState, useEffect } from 'react';
+import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent, Image, Filter, X } from 'lucide-react';
+import { format, isAfter, isBefore, isEqual, startOfDay } from 'date-fns';
 import { 
   Card, 
   CardContent
@@ -20,6 +21,18 @@ import {
 } from '@/components/ui/popover';
 import { Badge } from '@/components/ui/badge';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Slider
+} from "@/components/ui/slider";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Switch } from "@/components/ui/switch";
 
 // Sample events data
 const allEvents = [
@@ -152,14 +165,79 @@ const Events = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [view, setView] = useState('list'); // 'list' or 'calendar'
   
-  // Filter events for the selected date
-  const filteredEvents = date 
-    ? allEvents.filter(event => 
-        event.date.getDate() === date.getDate() && 
-        event.date.getMonth() === date.getMonth() && 
-        event.date.getFullYear() === date.getFullYear()
-      )
-    : allEvents;
+  // Filter states
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [dateRange, setDateRange] = useState<{start?: Date, end?: Date}>({});
+  const [sortBy, setSortBy] = useState<string>('date-asc');
+
+  // Get list of available categories from events
+  const categories = Object.keys(eventCategories);
+  
+  // Apply filters to events
+  const filterEvents = () => {
+    return allEvents.filter(event => {
+      // Filter by date if selected
+      if (date) {
+        const eventDate = startOfDay(event.date);
+        const selectedDate = startOfDay(date);
+        if (!(isEqual(eventDate, selectedDate))) {
+          return false;
+        }
+      }
+      
+      // Filter by category if any selected
+      if (selectedCategories.length > 0 && !selectedCategories.includes(event.category)) {
+        return false;
+      }
+      
+      // Filter by date range if set
+      if (dateRange.start && isBefore(event.date, startOfDay(dateRange.start))) {
+        return false;
+      }
+      
+      if (dateRange.end && isAfter(event.date, startOfDay(dateRange.end))) {
+        return false;
+      }
+      
+      return true;
+    }).sort((a, b) => {
+      // Sort events
+      switch (sortBy) {
+        case 'date-asc':
+          return a.date.getTime() - b.date.getTime();
+        case 'date-desc':
+          return b.date.getTime() - a.date.getTime();
+        case 'title-asc':
+          return a.title.localeCompare(b.title);
+        case 'title-desc':
+          return b.title.localeCompare(a.title);
+        default:
+          return a.date.getTime() - b.date.getTime();
+      }
+    });
+  };
+  
+  // Get filtered events
+  const filteredEvents = filterEvents();
+  
+  // Check if any filters are active
+  const isFilterActive = selectedCategories.length > 0 || dateRange.start || dateRange.end;
+  
+  // Clear all filters
+  const clearFilters = () => {
+    setSelectedCategories([]);
+    setDateRange({});
+  };
+  
+  // Handle category selection/deselection
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev => 
+      prev.includes(category) 
+        ? prev.filter(c => c !== category) 
+        : [...prev, category]
+    );
+  };
   
   // Get unique event dates for the calendar
   const eventDates = allEvents.map(event => format(event.date, 'yyyy-MM-dd'));
@@ -236,7 +314,7 @@ const Events = () => {
       <section className="section-padding">
         <div className="container-custom">
           <Tabs defaultValue="list" value={view} onValueChange={setView} className="w-full">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
               <TabsList>
                 <TabsTrigger value="list" className="flex items-center">
                   <Tag className="mr-2 h-4 w-4" />
@@ -295,7 +373,154 @@ const Events = () => {
                 >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
+                <Button
+                  variant={isFilterActive ? "default" : "outline"}
+                  size="icon"
+                  onClick={() => setShowFilters(!showFilters)}
+                  className={isFilterActive ? "relative" : ""}
+                >
+                  {isFilterActive ? (
+                    <>
+                      <Filter className="h-4 w-4" />
+                      <span className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                        {selectedCategories.length + (dateRange.start || dateRange.end ? 1 : 0)}
+                      </span>
+                    </>
+                  ) : (
+                    <Filter className="h-4 w-4" />
+                  )}
+                </Button>
               </div>
+            </div>
+
+            {/* Filters Panel */}
+            {showFilters && (
+              <div className="bg-card border rounded-lg p-4 mb-6 animate-in fade-in-0 zoom-in-95 duration-300">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-medium">Filter Events</h3>
+                  <Button variant="ghost" size="sm" onClick={clearFilters} className="text-muted-foreground hover:text-foreground">
+                    <X className="h-3.5 w-3.5 mr-1" /> Clear
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Category filter */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Categories</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {categories.map(category => (
+                        <div key={category} className="flex items-center space-x-2">
+                          <Checkbox 
+                            id={`category-${category}`} 
+                            checked={selectedCategories.includes(category)}
+                            onCheckedChange={() => toggleCategory(category)}
+                          />
+                          <label 
+                            htmlFor={`category-${category}`}
+                            className="text-sm flex items-center cursor-pointer"
+                          >
+                            <div className={`h-3 w-3 rounded-full ${(eventCategories as any)[category] || "bg-gray-500"} mr-2`}></div>
+                            {category}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Date range filter */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Date Range</h4>
+                    <div className="space-y-3">
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            className="w-full justify-start text-left text-sm"
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {dateRange.start ? format(dateRange.start, 'PPP') : <span>Start date</span>}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0">
+                          <Calendar
+                            mode="single"
+                            selected={dateRange.start}
+                            onSelect={(date) => setDateRange(prev => ({ ...prev, start: date }))}
+                            className="p-3 pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            className="w-full justify-start text-left text-sm"
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {dateRange.end ? format(dateRange.end, 'PPP') : <span>End date</span>}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0">
+                          <Calendar
+                            mode="single"
+                            selected={dateRange.end}
+                            onSelect={(date) => setDateRange(prev => ({ ...prev, end: date }))}
+                            fromDate={dateRange.start}
+                            className="p-3 pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  </div>
+                  
+                  {/* Sort filter */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Sort By</h4>
+                    <Select value={sortBy} onValueChange={setSortBy}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Sort by..." />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="date-asc">Date (Newest First)</SelectItem>
+                        <SelectItem value="date-desc">Date (Oldest First)</SelectItem>
+                        <SelectItem value="title-asc">Title (A-Z)</SelectItem>
+                        <SelectItem value="title-desc">Title (Z-A)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            <div className="mb-4">
+              {isFilterActive && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedCategories.map(category => (
+                    <Badge key={category} variant="secondary" className="flex items-center gap-1">
+                      <div className={`h-2 w-2 rounded-full ${(eventCategories as any)[category] || "bg-gray-500"}`}></div>
+                      {category}
+                      <X 
+                        className="h-3 w-3 ml-1 cursor-pointer" 
+                        onClick={() => toggleCategory(category)}
+                      />
+                    </Badge>
+                  ))}
+                  
+                  {(dateRange.start || dateRange.end) && (
+                    <Badge variant="secondary" className="flex items-center gap-1">
+                      <CalendarIcon className="h-3 w-3 mr-1" />
+                      {dateRange.start ? format(dateRange.start, 'MMM d') : '...'}
+                      {' to '}
+                      {dateRange.end ? format(dateRange.end, 'MMM d, yyyy') : '...'}
+                      <X 
+                        className="h-3 w-3 ml-1 cursor-pointer" 
+                        onClick={() => setDateRange({})}
+                      />
+                    </Badge>
+                  )}
+                </div>
+              )}
             </div>
 
             <TabsContent value="list" className="mt-0">
@@ -305,26 +530,30 @@ const Events = () => {
                 ) : (
                   <div>
                     <div className="text-center py-8 bg-muted rounded-lg mb-10">
-                      <h3 className="text-xl font-medium mb-2">No events on {date ? format(date, 'MMMM d, yyyy') : 'this date'}</h3>
+                      <h3 className="text-xl font-medium mb-2">No events found</h3>
                       <p className="text-muted-foreground mb-4">
-                        Here are all upcoming events
+                        Try adjusting your filters or selecting a different date
                       </p>
                       <Button 
                         variant="outline" 
-                        onClick={() => setDate(new Date())}
+                        onClick={clearFilters}
                         className="mb-4"
                       >
-                        Back to Today
+                        Clear Filters
                       </Button>
                     </div>
                     
-                    <h3 className="text-2xl font-semibold mb-6">All Upcoming Events</h3>
-                    <div className="space-y-6">
-                      {allEvents
-                        .sort((a, b) => a.date.getTime() - b.date.getTime())
-                        .map((event) => renderEventCard(event))
-                      }
-                    </div>
+                    {!isFilterActive && (
+                      <>
+                        <h3 className="text-2xl font-semibold mb-6">All Upcoming Events</h3>
+                        <div className="space-y-6">
+                          {allEvents
+                            .sort((a, b) => a.date.getTime() - b.date.getTime())
+                            .map((event) => renderEventCard(event))
+                          }
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
