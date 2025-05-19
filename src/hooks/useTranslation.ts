@@ -7,7 +7,7 @@ export const useTranslation = () => {
   const { language, direction } = useLanguage();
   const { t, i18n } = useI18nTranslation();
   
-  // Apply the appropriate font family based on language
+  // Apply the appropriate font family based on language and set language direction
   useEffect(() => {
     if (language === 'ar') {
       document.body.classList.add('font-arabic');
