@@ -69,7 +69,7 @@ const latestNews = [
     id: 2,
     title: "Opening of the Barelias Hospital",
     date: "August 12, 2025",
-    excerpt: "We are proud to announce the opening of the new Barelias Hospital, a state-of-the-art medical facility designed to provide comprehensive healthcare services to our community. This modern facility features advanced medical equipment, specialized departments, and a dedicated team of healthcare professionals.",
+    excerpt: "We are proud to announce the opening of the new Barelias Hospital, a state-of-the-art medical facility designed to provide comprehensive healthcare services to our community. This modern facility features advanced medical equipment.",
     image: "/lovable-uploads/976951c3-614b-4064-8fa4-a28de2757dde.png",
     icon: Hospital // Using Hospital icon
   },
@@ -77,7 +77,7 @@ const latestNews = [
     id: 3,
     title: "Grade 12 Graduation Ceremony",
     date: "September 5, 2025",
-    excerpt: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will take place at the Municipal Cultural Center.",
+    excerpt: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will take place at the Municipal Cultural Center with awards presentation.",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     icon: GraduationCap
   }
@@ -249,7 +249,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* News & Announcements Section */}
+      {/* News & Announcements Section with Fixed Read More positioning */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="flex justify-between items-center mb-8">
@@ -264,7 +264,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {latestNews.map((item) => (
-              <Card key={item.id} className="overflow-hidden card-hover">
+              <Card key={item.id} className="overflow-hidden card-hover flex flex-col h-full">
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={item.image} 
@@ -272,14 +272,16 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="text-sm text-muted-foreground mb-2">{item.date}</div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground mb-4">{item.excerpt}</p>
-                  <Link to={`/news/${item.id}`} className="text-primary flex items-center">
-                    Read More
-                    <ArrowRight size={16} className="ml-1" aria-hidden="true" />
-                  </Link>
+                  <p className="text-muted-foreground mb-4 line-clamp-3 h-[4.5rem]">{item.excerpt}</p>
+                  <div className="mt-auto">
+                    <Link to={`/news/${item.id}`} className="text-primary flex items-center">
+                      Read More
+                      <ArrowRight size={16} className="ml-1" aria-hidden="true" />
+                    </Link>
+                  </div>
                 </div>
               </Card>
             ))}
