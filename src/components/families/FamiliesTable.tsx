@@ -11,7 +11,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import MobileFamilyCard from './MobileFamilyCard';
-import { useMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface FamiliesTableProps {
   families: Family[];
@@ -24,7 +24,7 @@ type SortDirection = 'asc' | 'desc';
 const FamiliesTable: React.FC<FamiliesTableProps> = ({ families, onFamilySelect }) => {
   const [sortField, setSortField] = useState<SortField>('familyName');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
 
   // Handle sort toggle
   const handleSort = (field: SortField) => {
@@ -81,6 +81,12 @@ const FamiliesTable: React.FC<FamiliesTableProps> = ({ families, onFamilySelect 
     );
   }
 
+  // Map our custom sort direction to HTML aria-sort attribute values
+  const getAriaSortValue = (field: SortField): "ascending" | "descending" | "none" => {
+    if (field !== sortField) return "none";
+    return sortDirection === 'asc' ? "ascending" : "descending";
+  };
+
   // Desktop view
   return (
     <div className="border rounded-md overflow-hidden">
@@ -91,21 +97,21 @@ const FamiliesTable: React.FC<FamiliesTableProps> = ({ families, onFamilySelect 
               <TableHead 
                 onClick={() => handleSort('familyName')} 
                 className="cursor-pointer hover:bg-muted"
-                aria-sort={sortField === 'familyName' ? sortDirection : undefined}
+                aria-sort={getAriaSortValue('familyName')}
               >
                 Family Name {renderSortIcon('familyName')}
               </TableHead>
               <TableHead 
                 onClick={() => handleSort('members')} 
                 className="cursor-pointer hover:bg-muted text-right"
-                aria-sort={sortField === 'members' ? sortDirection : undefined}
+                aria-sort={getAriaSortValue('members')}
               >
                 Number of Members {renderSortIcon('members')}
               </TableHead>
               <TableHead 
                 onClick={() => handleSort('unificationNumber')} 
                 className="cursor-pointer hover:bg-muted"
-                aria-sort={sortField === 'unificationNumber' ? sortDirection : undefined}
+                aria-sort={getAriaSortValue('unificationNumber')}
               >
                 Unification Number {renderSortIcon('unificationNumber')}
               </TableHead>

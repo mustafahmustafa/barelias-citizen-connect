@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ChevronRight } from 'lucide-react';
 import type { Family } from '@/pages/FamiliesDirectory';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -27,20 +28,7 @@ const MobileFamilyCard: React.FC<MobileFamilyCardProps> = ({ family, onClick }) 
           </p>
           <div className="mt-2 text-xs text-muted-foreground flex items-center">
             <span>Tap for details</span>
-            <svg 
-              className="ml-1 w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M9 5l7 7-7 7" 
-              />
-            </svg>
+            <ChevronRight className="ml-1 w-4 h-4" />
           </div>
         </div>
       </CardContent>
