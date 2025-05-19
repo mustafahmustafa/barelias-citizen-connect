@@ -1,9 +1,19 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/locales/translations';
+import { useEffect } from 'react';
 
 export const useTranslation = () => {
-  const { language } = useLanguage();
+  const { language, direction } = useLanguage();
+  
+  // Apply the appropriate font family based on language
+  useEffect(() => {
+    if (language === 'ar') {
+      document.body.classList.add('font-arabic');
+    } else {
+      document.body.classList.remove('font-arabic');
+    }
+  }, [language]);
   
   const t = (key: string) => {
     // Split by dots for nested keys
@@ -34,5 +44,5 @@ export const useTranslation = () => {
     return translation;
   };
   
-  return { t, language };
+  return { t, language, direction };
 };

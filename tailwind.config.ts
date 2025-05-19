@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,6 +25,7 @@ export default {
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],
 				opensans: ['Open Sans', 'sans-serif'],
+				arabic: ['Tajawal', 'sans-serif'],  // Added Arabic font
 			},
 			colors: {
 				border: 'hsl(var(--border))',

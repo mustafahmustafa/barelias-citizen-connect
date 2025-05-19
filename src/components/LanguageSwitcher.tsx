@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Languages } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const LanguageSwitcher = () => {
@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
       aria-label={language === 'en' ? 'التبديل إلى العربية' : 'Switch to English'}
       dir={direction}
     >
-      <Languages className="h-4 w-4" />
+      <Globe className="h-4 w-4" />
       <span className={`ml-2 hidden lg:inline ${language === 'ar' ? 'mr-2 ml-0' : ''}`}>
         {language === 'en' ? 'عربي' : 'English'}
       </span>
