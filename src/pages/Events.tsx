@@ -168,9 +168,9 @@ const Events = () => {
   const renderEventCard = (event: any) => (
     <Card key={event.id} className="card-hover overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
-        {/* Image Container with consistent aspect ratio - Full height on desktop, takes 1/4 of card width */}
-        <div className="relative h-48 md:h-auto overflow-hidden">
-          <AspectRatio ratio={16/9} className="h-full">
+        {/* Image Container with improved height */}
+        <div className="relative h-64 md:h-auto overflow-hidden">
+          <AspectRatio ratio={4/5} className="h-full">
             <img 
               src={event.image} 
               alt={event.title} 
