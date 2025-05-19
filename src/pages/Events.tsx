@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent, Image } from 'lucide-react';
 import { format } from 'date-fns';
@@ -20,6 +19,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Badge } from '@/components/ui/badge';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 // Sample events data
 const allEvents = [
@@ -166,64 +166,53 @@ const Events = () => {
 
   // Function to render event cards
   const renderEventCard = (event: any) => (
-    <Card key={event.id} className="card-hover">
-      <CardContent className="p-6">
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:flex md:flex-col">
-            <div className="bg-primary/10 rounded p-4 text-center min-w-[100px]">
-              <div className="text-sm text-primary font-medium">
-                {format(event.date, 'MMM')}
-              </div>
-              <div className="text-3xl font-bold text-primary">
-                {format(event.date, 'd')}
-              </div>
-              <div className="text-sm text-primary font-medium">
-                {format(event.date, 'yyyy')}
-              </div>
-            </div>
-            {event.image && (
-              <div className="mt-4 rounded overflow-hidden h-32 w-32 hidden md:block">
-                <img 
-                  src={event.image} 
-                  alt={event.title} 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            )}
-          </div>
+    <Card key={event.id} className="card-hover overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+        {/* Image Container - Full height on desktop, takes 1/4 of card width */}
+        <div className="relative h-48 md:h-full overflow-hidden">
+          <img 
+            src={event.image} 
+            alt={event.title} 
+            className="h-full w-full object-cover transition-transform hover:scale-105 duration-700"
+          />
           
-          <div className="flex-grow">
-            <div className="flex flex-wrap gap-2 mb-2">
-              <Badge className={(eventCategories as any)[event.category] || "bg-gray-500"}>
-                {event.category}
-              </Badge>
+          {/* Date overlay on the image */}
+          <div className="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm shadow-lg rounded-lg p-3 text-center min-w-[80px]">
+            <div className="text-xs font-semibold uppercase text-primary">
+              {format(event.date, 'MMM')}
             </div>
-            <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-            
-            {event.image && (
-              <div className="mb-4 rounded overflow-hidden h-40 md:hidden">
-                <img 
-                  src={event.image} 
-                  alt={event.title} 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            )}
-            
-            <p className="text-muted-foreground mb-4">{event.description}</p>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-muted-foreground">
-              <div className="flex items-center">
-                <Clock size={16} className="mr-2 text-primary" />
-                <span>{event.time}</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin size={16} className="mr-2 text-primary" />
-                <span>{event.location}</span>
-              </div>
+            <div className="text-2xl font-bold text-primary mt-1">
+              {format(event.date, 'd')}
+            </div>
+            <div className="text-xs text-muted-foreground">
+              {format(event.date, 'yyyy')}
             </div>
           </div>
         </div>
-      </CardContent>
+        
+        {/* Content Container */}
+        <div className="p-6 md:col-span-3">
+          <div className="flex flex-wrap gap-2 mb-3">
+            <Badge className={(eventCategories as any)[event.category] || "bg-gray-500"}>
+              {event.category}
+            </Badge>
+          </div>
+          
+          <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
+          <p className="text-muted-foreground mb-4 line-clamp-3">{event.description}</p>
+          
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-muted-foreground mt-auto">
+            <div className="flex items-center">
+              <Clock size={16} className="mr-2 text-primary" />
+              <span>{event.time}</span>
+            </div>
+            <div className="flex items-center">
+              <MapPin size={16} className="mr-2 text-primary" />
+              <span>{event.location}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </Card>
   );
 
