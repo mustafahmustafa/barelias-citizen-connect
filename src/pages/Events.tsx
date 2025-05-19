@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Calendar as CalendarIcon, Clock, MapPin, ChevronLeft, ChevronRight, Tag, Calendar as CalendarComponent } from 'lucide-react';
 import { format } from 'date-fns';
@@ -103,6 +102,15 @@ const allEvents = [
     location: "Community Center",
     category: "Health",
     description: "Informational seminar on public health issues, vaccinations, and available health services in the community."
+  },
+  {
+    id: 10,
+    title: "Grade 12 Graduation Ceremony",
+    date: new Date(2025, 8, 5), // September 5, 2025
+    time: "5:00 PM - 8:00 PM",
+    location: "Municipal Cultural Center",
+    category: "Education",
+    description: "Celebrate the achievements of Bar Elias Grade 12 students as they graduate and prepare for the next chapter of their lives. The ceremony will include speeches, diploma presentations, and a reception for graduates and their families."
   }
 ];
 
@@ -115,7 +123,8 @@ const eventCategories = {
   "Sports": "bg-red-500",
   "Environment": "bg-teal-500",
   "Business": "bg-orange-500",
-  "Health": "bg-rose-500"
+  "Health": "bg-rose-500",
+  "Education": "bg-indigo-500"
 };
 
 const Events = () => {
