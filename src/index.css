@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -78,25 +79,110 @@
     @apply bg-background text-foreground font-opensans;
   }
 
+  html[dir="rtl"] body {
+    @apply font-arabic;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-montserrat font-semibold;
   }
   
-  /* RTL support */
-  html[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-  }
-
-  html[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-  }
-  
-  html[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
+  html[dir="rtl"] h1,
+  html[dir="rtl"] h2,
+  html[dir="rtl"] h3,
+  html[dir="rtl"] h4,
+  html[dir="rtl"] h5,
+  html[dir="rtl"] h6 {
+    @apply font-arabic;
   }
   
-  html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
+  /* RTL support - Basic utility classes */
+  html[dir="rtl"] {
+    text-align: right;
+  }
+  
+  /* RTL spacing helpers */
+  html[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-10 > :not([hidden]) ~ :not([hidden]),
+  html[dir="rtl"] .space-x-12 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+  
+  /* RTL specific margins */
+  html[dir="rtl"] .mr-1 {
+    margin-right: 0;
+    margin-left: 0.25rem;
+  }
+  
+  html[dir="rtl"] .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  
+  html[dir="rtl"] .mr-3 {
+    margin-right: 0;
+    margin-left: 0.75rem;
+  }
+  
+  html[dir="rtl"] .mr-4 {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+  
+  html[dir="rtl"] .ml-1 {
+    margin-left: 0;
+    margin-right: 0.25rem;
+  }
+  
+  html[dir="rtl"] .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  
+  html[dir="rtl"] .ml-3 {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+  
+  html[dir="rtl"] .ml-4 {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+  
+  html[dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  html[dir="rtl"] .mr-auto {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  /* RTL transforms */
+  html[dir="rtl"] .rotate-180 {
+    --tw-rotate: 0deg;
+  }
+  
+  html[dir="rtl"] .rotate-0 {
+    --tw-rotate: 180deg;
+  }
+  
+  /* RTL borders */
+  html[dir="rtl"] .border-r {
+    border-right: 0;
+    border-left: 1px solid;
+  }
+  
+  html[dir="rtl"] .border-l {
+    border-left: 0;
+    border-right: 1px solid;
   }
 }
 
@@ -111,6 +197,15 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* RTL component styles */
+  html[dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+  
+  html[dir="rtl"] .rtl-text-right {
+    text-align: right;
   }
 }
 
@@ -136,9 +231,4 @@
 .underline-links a {
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;
-}
-
-/* RTL specific styles */
-html[dir="rtl"] {
-  text-align: right;
 }

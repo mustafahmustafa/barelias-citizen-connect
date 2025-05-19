@@ -10,8 +10,9 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ar' ? 'en' : 'ar';
     i18n.changeLanguage(newLang);
-    document.documentElement.lang = newLang;
-    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+    
+    // The direction will be updated by the i18n.on('languageChanged') handler in i18n.ts
+    // This function also adds/removes the 'rtl' class on the document element
   };
 
   return (

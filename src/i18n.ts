@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -72,11 +73,27 @@ i18n
     }
   });
 
-// When language changes, update document direction
+// When language changes, update document direction and language attribute
 i18n.on('languageChanged', (lng) => {
   const direction = lng === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.dir = direction;
   document.documentElement.lang = lng;
+  
+  // Add RTL class for specific RTL styling
+  if (lng === 'ar') {
+    document.documentElement.classList.add('rtl');
+  } else {
+    document.documentElement.classList.remove('rtl');
+  }
 });
+
+// Set initial direction on load
+const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
+document.documentElement.dir = direction;
+document.documentElement.lang = i18n.language;
+
+if (i18n.language === 'ar') {
+  document.documentElement.classList.add('rtl');
+}
 
 export default i18n;

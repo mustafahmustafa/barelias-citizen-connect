@@ -42,18 +42,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Column */}
           <div>
-            <div className="flex items-center space-x-2" style={{ flexDirection: isArabic ? 'row-reverse' : 'row' }}>
+            <div className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-2'}`}>
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                 <span className="text-primary font-bold text-sm">BE</span>
               </div>
-              <h3 className="font-montserrat font-bold text-xl">
+              <h3 className={`font-${isArabic ? 'arabic' : 'montserrat'} font-bold text-xl`}>
                 {isArabic ? 'بر الياس' : 'Bar Elias'}
               </h3>
             </div>
             <p className="text-gray-300 mb-4">
               {t('footer.about')}
             </p>
-            <div className={`flex ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
+            <div className={`flex ${isArabic ? 'space-x-reverse' : ''} space-x-3`}>
               <a href="https://facebook.com" className="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Facebook size={18} />
                 <span className="sr-only">Facebook</span>
@@ -71,7 +71,7 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('footer.quickLinks')}</h3>
+            <h3 className={`text-lg font-${isArabic ? 'arabic' : 'semibold'} mb-5`}>{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
@@ -113,7 +113,7 @@ const Footer = () => {
           
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('footer.ourServices')}</h3>
+            <h3 className={`text-lg font-${isArabic ? 'arabic' : 'semibold'} mb-5`}>{t('footer.ourServices')}</h3>
             <ul className="space-y-3">
               {serviceItems.map((service) => (
                 <li key={service.key}>
@@ -127,20 +127,20 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('footer.contactInfo')}</h3>
+            <h3 className={`text-lg font-${isArabic ? 'arabic' : 'semibold'} mb-5`}>{t('footer.contactInfo')}</h3>
             <ul className="space-y-4">
-              <li className={`flex items-start ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
-                <MapPin size={20} className={`shrink-0 text-gray-300 mt-1 ${isArabic ? 'ml-3' : 'mr-0'}`} />
+              <li className={`flex items-start ${isArabic ? 'flex-row-reverse text-right' : ''} space-x-3`}>
+                <MapPin size={20} className={`shrink-0 text-gray-300 mt-1 ${isArabic ? 'mx-3' : ''}`} />
                 <span className="text-gray-300">
                   {isArabic ? contactInfo.address.ar : contactInfo.address.en}
                 </span>
               </li>
-              <li className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
-                <Phone size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'ml-3' : 'mr-0'}`} />
+              <li className={`flex items-center ${isArabic ? 'flex-row-reverse text-right' : ''} space-x-3`}>
+                <Phone size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'mx-3' : ''}`} />
                 <span className="text-gray-300">{contactInfo.phone}</span>
               </li>
-              <li className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-3'}`}>
-                <Mail size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'ml-3' : 'mr-0'}`} />
+              <li className={`flex items-center ${isArabic ? 'flex-row-reverse text-right' : ''} space-x-3`}>
+                <Mail size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'mx-3' : ''}`} />
                 <span className="text-gray-300">{contactInfo.email}</span>
               </li>
             </ul>
@@ -149,7 +149,7 @@ const Footer = () => {
         
         {/* Bottom Footer */}
         <div className="pt-6 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row md:justify-between items-center">
+          <div className={`flex flex-col md:flex-row md:justify-between items-center ${isArabic ? 'md:flex-row-reverse' : ''}`}>
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} {isArabic ? 'بلدية بر الياس.' : 'Municipality of Bar Elias.'} {t('footer.rights')}
             </p>
