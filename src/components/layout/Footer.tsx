@@ -2,16 +2,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, MapPin, Mail, Phone } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useTranslation } from '@/hooks/useTranslation';
 
 const Footer = () => {
-  const { direction } = useLanguage();
-  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1a2942] text-white" dir={direction}>
+    <footer className="bg-[#1a2942] text-white">
       <div className="container-custom pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Column */}
@@ -43,41 +39,41 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('quickLinks')}</h3>
+            <h3 className="text-lg font-semibold mb-5">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                  {t('home')}
+                  Home
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
-                  {t('about')}
+                  About
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('services')}
+                  Services
                 </Link>
               </li>
               <li>
                 <Link to="/news" className="text-gray-300 hover:text-white transition-colors">
-                  {t('news')}
+                  News
                 </Link>
               </li>
               <li>
                 <Link to="/events" className="text-gray-300 hover:text-white transition-colors">
-                  {t('events')}
+                  Events
                 </Link>
               </li>
               <li>
                 <Link to="/report" className="text-gray-300 hover:text-white transition-colors">
-                  {t('report')}
+                  Report
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  {t('contact')}
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -85,31 +81,31 @@ const Footer = () => {
           
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('ourServices')}</h3>
+            <h3 className="text-lg font-semibold mb-5">Our Services</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('utilitiesBills')}
+                  Utilities Bills
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('permitsLicenses')}
+                  Permits & Licenses
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('infrastructure')}
+                  Infrastructure
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('communityPrograms')}
+                  Community Programs
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  {t('businessServices')}
+                  Business Services
                 </Link>
               </li>
             </ul>
@@ -117,7 +113,7 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-5">{t('contactInfo')}</h3>
+            <h3 className="text-lg font-semibold mb-5">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="shrink-0 text-gray-300 mt-1" />
@@ -141,12 +137,12 @@ const Footer = () => {
         <div className="pt-6 border-t border-gray-700">
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Municipality of Bar Elias. {t('allRightsReserved')}
+              © {currentYear} Municipality of Bar Elias. All Rights Reserved
             </p>
             <div className="flex space-x-4 text-sm text-gray-400">
-              <Link to="/privacy" className="hover:text-white transition-colors">{t('privacyPolicy')}</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">{t('termsOfUse')}</Link>
-              <Link to="/accessibility" className="hover:text-white transition-colors">{t('accessibility')}</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+              <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
             </div>
           </div>
         </div>
