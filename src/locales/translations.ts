@@ -202,7 +202,6 @@ export const translations = {
     lastName: "Last Name",
     email: "Email",
     phone: "Phone Number",
-    address: "Address",
     areasInterest: "Areas of Interest",
     availability: "Availability",
     prevExperience: "Previous Volunteer Experience (Optional)",
@@ -483,3 +482,4 @@ export const translations = {
     legalOffice: "مكتب الشؤون القانونية"
   }
 };
+
