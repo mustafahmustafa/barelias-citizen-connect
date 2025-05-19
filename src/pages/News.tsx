@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Search, Calendar, Tag, ArrowRight } from 'lucide-react';
 import { 
@@ -184,7 +185,7 @@ const News = () => {
           {filteredNews.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredNews.map((item) => (
-                <Card key={item.id} className="overflow-hidden card-hover">
+                <Card key={item.id} className="overflow-hidden card-hover flex flex-col h-full">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={item.image} 
@@ -192,7 +193,7 @@ const News = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex-grow flex flex-col">
                     <div className="flex justify-between items-center mb-3">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Calendar size={14} className="mr-1" />
@@ -204,14 +205,14 @@ const News = () => {
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.excerpt}</p>
+                    <p className="text-muted-foreground line-clamp-3 h-[4.5rem]">{item.excerpt}</p>
+                    <div className="mt-auto pt-4">
+                      <Button variant="link" className="p-0 text-primary flex items-center">
+                        Read More
+                        <ArrowRight size={16} className="ml-1" />
+                      </Button>
+                    </div>
                   </CardContent>
-                  <CardFooter className="px-6 pb-6 pt-0">
-                    <Button variant="link" className="p-0 text-primary flex items-center">
-                      Read More
-                      <ArrowRight size={16} className="ml-1" />
-                    </Button>
-                  </CardFooter>
                 </Card>
               ))}
             </div>
