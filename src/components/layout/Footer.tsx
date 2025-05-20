@@ -148,15 +148,19 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} {isArabic ? 'بلدية بر الياس.' : 'Municipality of Bar Elias.'} {t('footer.rights')}
             </p>
-            <div className={`flex ${isArabic ? 'space-x-reverse' : 'space-x-4'} text-sm text-gray-400`}>
-              {bottomLinks.map((link) => (
-                <Link 
-                  key={link.key}
-                  to={link.path} 
-                  className="hover:text-white transition-colors"
-                >
-                  {isArabic ? link.ar : link.en}
-                </Link>
+            <div className={`flex ${isArabic ? 'space-x-reverse' : ''} text-sm text-gray-400`}>
+              {bottomLinks.map((link, index) => (
+                <React.Fragment key={link.key}>
+                  <Link 
+                    to={link.path} 
+                    className="hover:text-white transition-colors"
+                  >
+                    {isArabic ? link.ar : link.en}
+                  </Link>
+                  {index < bottomLinks.length - 1 && (
+                    <span className="mx-3 text-gray-500">|</span>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </div>
