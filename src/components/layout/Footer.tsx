@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, MapPin, Mail, Phone } from 'lucide-react';
@@ -146,7 +145,10 @@ const Footer = () => {
         <div className="pt-6 border-t border-gray-700">
           <div className={`flex flex-col md:flex-row md:justify-between items-center ${isArabic ? 'md:flex-row-reverse' : ''}`}>
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} {isArabic ? 'بلدية بر الياس.' : 'Municipality of Bar Elias.'} {t('footer.rights')}
+              {isArabic 
+                ? `بلدية برالياس. جميع الحقوق محفوظة © ${currentYear}`
+                : `© ${currentYear} Municipality of Bar Elias. ${t('footer.rights')}`
+              }
             </p>
             <div className={`flex ${isArabic ? 'space-x-reverse' : ''} text-sm text-gray-400`}>
               {bottomLinks.map((link, index) => (
