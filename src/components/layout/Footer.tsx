@@ -26,8 +26,8 @@ const Footer = () => {
   // Contact info that needs translation
   const contactInfo = {
     address: {
-      en: 'Municipal Building, Main Street, Bar Elias, Bekaa Valley, Lebanon',
-      ar: 'مبنى البلدية، الشارع الرئيسي، بر الياس، وادي البقاع، لبنان'
+      en: 'Municipal Building, Bar Elias, Bekaa, Lebanon',
+      ar: 'مبنى البلدية، برالياس، البقاع، لبنان'
     },
     phone: '+961 (0)8 123 456',
     email: 'info@barelias-municipality.gov.lb'
