@@ -42,14 +42,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Column */}
           <div>
-            <div className={`flex items-center ${isArabic ? 'space-x-reverse' : 'space-x-2'}`}>
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">BE</span>
-              </div>
-              <h3 className={`font-${isArabic ? 'arabic' : 'montserrat'} font-bold text-xl`}>
-                {isArabic ? 'بر الياس' : 'Bar Elias'}
-              </h3>
-            </div>
+            <h3 className={`font-${isArabic ? 'arabic' : 'montserrat'} font-bold text-xl mb-4`}>
+              {isArabic ? 'بر الياس' : 'Bar Elias'}
+            </h3>
             <p className="text-gray-300 mb-4">
               {t('footer.about')}
             </p>
@@ -137,7 +132,7 @@ const Footer = () => {
               </li>
               <li className={`flex items-center ${isArabic ? 'flex-row-reverse text-right' : ''} space-x-3`}>
                 <Phone size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'mx-3' : ''}`} />
-                <span className="text-gray-300">{contactInfo.phone}</span>
+                <span className="text-gray-300" dir="ltr">{contactInfo.phone}</span>
               </li>
               <li className={`flex items-center ${isArabic ? 'flex-row-reverse text-right' : ''} space-x-3`}>
                 <Mail size={20} className={`shrink-0 text-gray-300 ${isArabic ? 'mx-3' : ''}`} />
