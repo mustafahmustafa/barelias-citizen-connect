@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, MapPin, Mail, Phone } from 'lucide-react';
@@ -6,15 +7,6 @@ import { useTranslation } from 'react-i18next';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t, i18n } = useTranslation();
-
-  // Service items that need translation
-  const serviceItems = [
-    { key: 'utilities', en: 'Utilities Bills', ar: 'فواتير المرافق' },
-    { key: 'permits', en: 'Permits & Licenses', ar: 'التصاريح والتراخيص' },
-    { key: 'infrastructure', en: 'Infrastructure', ar: 'البنية التحتية' },
-    { key: 'community', en: 'Community Programs', ar: 'البرامج المجتمعية' },
-    { key: 'business', en: 'Business Services', ar: 'خدمات الأعمال' }
-  ];
 
   // Bottom footer links that need translation
   const bottomLinks = [
@@ -38,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1a2942] text-white">
       <div className="container-custom pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* About Column */}
           <div>
             <h3 className={`font-${isArabic ? 'arabic' : 'montserrat'} font-bold text-xl mb-4`}>
@@ -102,20 +94,6 @@ const Footer = () => {
                   {t('navbar.contact')}
                 </Link>
               </li>
-            </ul>
-          </div>
-          
-          {/* Services */}
-          <div>
-            <h3 className={`text-lg font-${isArabic ? 'arabic' : 'semibold'} mb-5`}>{t('footer.ourServices')}</h3>
-            <ul className="space-y-3">
-              {serviceItems.map((service) => (
-                <li key={service.key}>
-                  <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                    {isArabic ? service.ar : service.en}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
           
