@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1a2942] text-white">
       <div className="container-custom pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           {/* About Column */}
           <div>
             <h3 className={`font-${isArabic ? 'arabic' : 'montserrat'} font-bold text-xl mb-4`}>

@@ -1,3 +1,4 @@
+
 {
   "navbar": {
     "home": "Home",
@@ -36,7 +37,7 @@
     },
     "structure": {
       "title": "Organizational Structure",
-      "heading": "How We’re Organized",
+      "heading": "How We're Organized",
       "subtitle": "Meet our teams and leaders",
       "keyPersonnel": "Key Personnel",
       "cards": [
@@ -129,12 +130,39 @@
       "email": "Your Email",
       "message": "Your Message",
       "submit": "Submit"
+    },
+    "title": "Contact Us",
+    "subtitle": "We're here to help with any questions or concerns you may have.",
+    "form": {
+      "title": "Send Us a Message",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "phoneOptional": "Phone Number (Optional)",
+      "subject": "Subject",
+      "message": "Your Message",
+      "messagePlaceholder": "How can we help you?",
+      "send": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Our Address",
+      "phones": "Phone Numbers",
+      "emails": "Email Addresses",
+      "hours": "Office Hours",
+      "weekdays": "Monday-Thursday",
+      "friday": "Friday",
+      "weekend": "Saturday-Sunday",
+      "closed": "Closed"
+    },
+    "map": "Find Us on the Map",
+    "departments": {
+      "title": "Municipal Departments"
     }
   },
   "footer": {
     "about": "Barelias Municipality official site, serving our citizens and visitors with municipal services, news, and community resources.",
     "quickLinks": "Quick Links",
-    "ourServices": "Our Services",
     "contactInfo": "Contact Info",
     "rights": "All rights reserved"
   },

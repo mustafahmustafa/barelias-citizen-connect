@@ -1,50 +1,9 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 
-// Define our translation resources type
-export const resources = {
-  en: {
-    translation: {
-      navbar: {
-        home: 'Home',
-        about: 'About',
-        services: 'Services',
-        news: 'News',
-        events: 'Events',
-        report: 'Report',
-        contact: 'Contact'
-      },
-      // Other translations defined in the JSON files
-    }
-  },
-  ar: {
-    translation: {
-      navbar: {
-        home: 'الرئيسية',
-        about: 'حول',
-        services: 'الخدمات',
-        news: 'الأخبار',
-        events: 'الفعاليات',
-        report: 'الإبلاغ',
-        contact: 'اتصل بنا'
-      },
-      footer: {
-        about: 'الموقع الرسمي لبلدية برا إلياس، نخدم مواطنينا وزوارنا بالخدمات البلدية والأخبار والموارد المجتمعية.',
-        quickLinks: 'روابط سريعة',
-        ourServices: 'خدماتنا',
-        contactInfo: 'معلومات الاتصال',
-        rights: 'جميع الحقوق محفوظة'
-      },
-      emergency: 'جهات الاتصال الطارئة',
-      search: 'بحث'
-      // Other translations defined in the JSON files
-    }
-  }
-};
-
-// Initialize i18next
 i18n
   // load translation using http -> see /public/locales
   .use(Backend as any)
@@ -54,7 +13,6 @@ i18n
   .use(initReactI18next as any)
   // init i18next
   .init({
-    resources,               // Use the defined resources
     lng: 'ar',               // Force default to Arabic
     fallbackLng: 'ar',       // Never fall back to English
     debug: import.meta.env.DEV,
