@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -55,7 +54,9 @@ i18n
   .use(initReactI18next as any)
   // init i18next
   .init({
-    fallbackLng: 'en',
+    resources,               // Use the defined resources
+    lng: 'ar',               // Force default to Arabic
+    fallbackLng: 'ar',       // Never fall back to English
     debug: import.meta.env.DEV,
     
     interpolation: {
@@ -68,9 +69,7 @@ i18n
     },
 
     // Add RTL support for Arabic
-    react: {
-      useSuspense: true
-    }
+    react: { useSuspense: true }
   });
 
 // When language changes, update document direction and language attribute
