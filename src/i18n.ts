@@ -72,6 +72,11 @@ i18n
     react: { useSuspense: true }
   });
 
+// Log missing translation keys to help identify gaps
+i18n.on('missingKey', (lng, ns, key) => {
+  console.warn(`Missing translation key: "${key}" in ${lng}/${ns}`);
+});
+
 // When language changes, update document direction and language attribute
 i18n.on('languageChanged', (lng) => {
   const direction = lng === 'ar' ? 'rtl' : 'ltr';
