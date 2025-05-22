@@ -1,83 +1,63 @@
-"about": {
-  "title": "About Us",
-  "subtitle": "Barelias Municipality is committed to serving our citizens and visitors with transparent, efficient municipal services and up-to-date community resources.",
-  "history": {
-    "title": "Our History",
-    "heading": "A Rich Heritage",
-    "intro": "From its humble beginnings as a small farming community, Bar Elias has grown into a vibrant municipality.",
-    "paragraph1": "In the early 19th century, the town became a key stop on regional trade routes, fostering cultural exchange and economic growth.",
-    "paragraph2": "Today, we celebrate our diverse heritage and continue to build a prosperous future for all residents.",
-    "imageAlt": "Historical view of Bar Elias"
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "events": "Events",
+    "report": "Report",
+    "contact": "Contact"
   },
-  "mission": {
-    "title": "Mission & Vision",
-    "subtitle": "Our guiding principles that shape every service we provide.",
-    "mission": "Our Mission",
-    "missionText": "To deliver transparent, efficient municipal services that enhance the quality of life in our community.",
-    "vision": "Our Vision",
-    "visionText": "To be a leading municipality known for innovation, sustainability, and community engagement."
+  "hero": {
+    "title": "Welcome to Barelias Citizen Connect",
+    "subtitle": "Your hub for municipal news, events, and services",
+    "cta": "Get Started"
   },
-  "structure": {
-    "title": "Organizational Structure",
-    "heading": "How We’re Organized",
-    "subtitle": "Meet our teams and leaders",
-    "keyPersonnel": "Key Personnel",
-    "cards": [
-      {
-        "title": "Mayor's Office",
-        "description": "Provides executive leadership and coordinates all municipal activities and services.",
-        "personnel": [
-          "Hassan Mahmoud – Mayor",
-          "Layla Khoury – Chief of Staff"
-        ]
-      },
-      {
-        "title": "Municipal Council",
-        "description": "Elected representatives responsible for policy, budgeting, and development plans.",
-        "personnel": [
-          "Council President & 12 Council Members",
-          "Three specialized committees"
-        ]
-      },
-      {
-        "title": "Administrative Services",
-        "description": "Handles day-to-day operations, including finance, human resources, and IT.",
-        "personnel": [
-          "Administrative Director",
-          "Finance & HR Managers"
-        ]
-      },
-      {
-        "title": "Public Works",
-        "description": "Oversees infrastructure development and maintenance, including roads, water systems, and public spaces.",
-        "personnel": [
-          "Director of Public Works",
-          "Engineering & Maintenance Teams"
-        ]
-      },
-      {
-        "title": "Community Services",
-        "description": "Manages social programs, cultural activities, and community engagement initiatives.",
-        "personnel": [
-          "Community Services Director",
-          "Program Coordinators"
-        ]
-      },
-      {
-        "title": "Planning & Development",
-        "description": "Responsible for urban planning, zoning, and building permits to ensure sustainable development.",
-        "personnel": [
-          "Planning Director",
-          "Urban Planners & Inspectors"
-        ]
-      }
+  "about": {
+    "heading": "About Us",
+    "content": "Barelias Municipality is committed to serving our citizens and visitors with transparent, efficient municipal services and up-to-date community resources."
+  },
+  "services": {
+    "heading": "Our Services",
+    "list": [
+      "Garbage Collection Scheduling",
+      "Rodent Control Requests",
+      "Building Permit Applications",
+      "Street Light Reporting"
     ]
   },
-  "location": {
-    "title": "Our Location",
-    "heading": "Where to Find Us",
-    "subtitle": "Visit our main office at the heart of Bar Elias municipality.",
-    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13225.24390754783!2d35.95!3d33.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ebd8ff6523fd3%3A0xb7fb95f251cad78a!2sBar%20Elias%2C%20Lebanon!5e0!3m2!1sen!2sus!4v1621500000000!5m2!1sen!2sus",
-    "mapTitle": "Map of Bar Elias"
-  }
+  "news": {
+    "heading": "Latest News",
+    "noArticles": "No news articles available."
+  },
+  "events": {
+    "heading": "Upcoming Events",
+    "noEvents": "No upcoming events at the moment."
+  },
+  "report": {
+    "heading": "Report an Issue",
+    "description": "If you see something that needs attention—potholes, broken streetlights or otherwise—let us know."
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Submit"
+    }
+  },
+  "footer": {
+    "about": "Barelias Municipality official site, serving our citizens and visitors with municipal services, news, and community resources.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved"
+  },
+  "emergency": "Emergency Contacts",
+  "search": "Search"
 }
+
