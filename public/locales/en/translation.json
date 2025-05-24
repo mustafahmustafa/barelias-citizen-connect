@@ -1,3 +1,4 @@
+
 {
   "navbar": {
     "home": "Home",
@@ -9,13 +10,51 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Welcome to Barelias Citizen Connect",
+    "title": "Welcome to Bar Elias Citizen Connect",
     "subtitle": "Your hub for municipal news, events, and services",
     "cta": "Get Started"
   },
   "about": {
     "heading": "About Us",
-    "content": "Barelias Municipality is committed to serving our citizens and visitors with transparent, efficient municipal services and up-to-date community resources."
+    "title": "About Bar Elias Municipality",
+    "subtitle": "Serving our community with dedication, transparency, and excellence for over decades.",
+    "content": "Bar Elias Municipality is committed to serving our citizens and visitors with transparent, efficient municipal services and up-to-date community resources.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We are dedicated to providing exceptional municipal services, fostering community development, and ensuring the well-being of all residents through transparent governance and sustainable practices.",
+      "imageAlt": "Bar Elias Municipality building"
+    },
+    "stats": {
+      "residents": "Residents",
+      "services": "Services"
+    },
+    "structure": {
+      "title": "Municipal Structure",
+      "description": "Our municipality operates through various departments and committees to serve our community effectively.",
+      "mayor": {
+        "title": "Mayor's Office",
+        "description": "Executive leadership and strategic direction for municipal operations."
+      },
+      "council": {
+        "title": "Municipal Council",
+        "description": "Elected representatives making key decisions for our community."
+      },
+      "services": {
+        "title": "Service Departments",
+        "description": "Specialized teams delivering essential services to residents."
+      },
+      "committees": {
+        "title": "Advisory Committees",
+        "description": "Community representatives providing input on local issues."
+      }
+    },
+    "history": {
+      "title": "Our History",
+      "imageAlt": "Historical view of Bar Elias",
+      "paragraph1": "Bar Elias has a rich history dating back centuries, serving as an important crossroads in the Bekaa Valley.",
+      "paragraph2": "The modern municipality was established to serve the growing community and provide essential services to residents.",
+      "paragraph3": "Today, we continue to build on this legacy while embracing innovation and sustainable development practices."
+    }
   },
   "services": {
     "heading": "Our Services",
@@ -40,24 +79,76 @@
   },
   "contact": {
     "heading": "Contact Us",
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for inquiries, support, or feedback. We're here to help.",
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "form": {
+      "title": "Send us a Message",
+      "fullName": "Full Name",
       "name": "Your Name",
-      "email": "Your Email",
-      "message": "Your Message",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "phoneOptional": "Phone Number (Optional)",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you...",
+      "send": "Send Message",
       "submit": "Submit"
-    }
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phones": "Phone Numbers",
+      "emails": "Email Addresses",
+      "hours": "Office Hours"
+    },
+    "departments": {
+      "title": "Municipal Departments"
+    },
+    "map": "Find Us on the Map"
   },
   "footer": {
-    "about": "Barelias Municipality official site, serving our citizens and visitors with municipal services, news, and community resources.",
+    "about": "Bar Elias Municipality official site, serving our citizens and visitors with municipal services, news, and community resources.",
     "quickLinks": "Quick Links",
     "ourServices": "Our Services",
     "contactInfo": "Contact Info",
     "rights": "All rights reserved"
   },
+  "families": {
+    "home": "Home",
+    "services": "Services",
+    "familyRegistry": "Family Registry",
+    "directory": "Families Directory",
+    "subtitle": "Browse and search family records in our municipal registry.",
+    "search": "Search families by name or unification number...",
+    "clearSearch": "Clear Search",
+    "showing": "Showing",
+    "of": "of",
+    "families": "families",
+    "page": "Page",
+    "previousPage": "Previous Page",
+    "nextPage": "Next Page"
+  },
+  "accessibility": {
+    "title": "Accessibility Statement",
+    "subtitle": "Our commitment to making our website accessible to everyone, including people with disabilities.",
+    "lastUpdated": "Last Updated",
+    "intro": "The Municipality of Bar Elias is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.",
+    "tool": {
+      "title": "Accessibility Tools Available",
+      "description": "Use the accessibility widget at the bottom right of the page to adjust font sizes, contrast, and other display settings to meet your needs."
+    },
+    "commitment": "Our Commitment",
+    "measures": "Accessibility Measures",
+    "limitations": "Known Limitations",
+    "compatibility": "Compatibility",
+    "efforts": "Ongoing Efforts",
+    "feedback": "Feedback and Contact",
+    "review": "Regular Review",
+    "thankyou": "Thank you for helping us improve accessibility for all users."
+  },
   "emergency": "Emergency Contacts",
   "search": "Search"
 }
-
